@@ -1620,9 +1620,11 @@ footer {
     }
 
     .cl-sidebar-wrap.open {
-        max-height: 500px;
         background: var(--card-bg);
-        border: 1px solid var(--card-border);
+        max-height: 50vh; 
+        overflow-y: auto; 
+        margin-top: 15px; 
+        padding-bottom: 15px; 
     }
 
     .cl-mobile-toggle-bar {
