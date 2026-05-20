@@ -383,4 +383,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.08 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Header scroll effect (match index behavior)
+    const headerEl = document.getElementById('cl-header') || document.querySelector('header');
+    if (headerEl) {
+        const checkHeader = () => {
+            if (window.scrollY > 50) {
+                headerEl.classList.add('scrolled');
+            } else {
+                headerEl.classList.remove('scrolled');
+            }
+        };
+        window.addEventListener('scroll', checkHeader);
+        // apply on load
+        checkHeader();
+    }
 });
