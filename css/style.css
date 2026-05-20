@@ -187,6 +187,46 @@ header.scrolled {
     transform: translateY(-2px);
 }
 
+/* Header Right Container */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Mobile Navigation Toggle Button */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    position: relative;
+    z-index: 1001;
+}
+
+.nav-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text-primary);
+    transition: var(--transition-smooth);
+    border-radius: 2px;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(12px);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-12px);
+}
+
 /* Background Glow Effects */
 .glow-bg {
     position: absolute;
@@ -1063,10 +1103,77 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        display: none; /* Can add a simplified mobile menu or just rely on layout */
+    .nav-toggle {
+        display: flex !important;
     }
     
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        background: rgba(5, 6, 11, 0.95);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--card-border);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        max-height: 500px;
+    }
+
+    .nav-menu .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-menu .nav-item a {
+        display: block;
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+
+    .nav-menu .nav-item a::after {
+        display: none;
+    }
+
+    .nav-toggle {
+        display: flex !important;
+    }
+
+    .header-right {
+        gap: 12px;
+    }
+
+    .btn-header {
+        display: inline-flex;
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .container {
+        padding: 0 16px;
+        max-width: 100%;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .logo-img-small {
+        height: 28px;
+    }
+
+    .logo-text {
+        font-size: 1.1rem;
+    }
+
     .what-it-does-content {
         grid-template-columns: 1fr;
     }

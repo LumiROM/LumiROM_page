@@ -9,6 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // 1.5 Mobile Menu Toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+        // Close menu when a link is clicked
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.classList.remove('active');
+            });
+        });
+    }
+
     // 2. Scroll reveal animations
     const revealElements = document.querySelectorAll('.reveal');
     const revealOnScroll = () => {
