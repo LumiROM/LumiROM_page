@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LumiROM - One UI & Galaxy AI for MediaTek Devices</title>
+    <meta name="description" content="LumiROM is a custom ROM designed to revitalize low-end Samsung MediaTek devices with One UI 8.5, Galaxy AI features, and extreme performance optimization.">
+    <meta name="keywords" content="LumiROM, custom rom, mediatek, samsung, galaxy, one ui, galaxy ai, SM-A325F, SM-A225F, SM-M325F, secure folder, knox bypass">
+    <meta name="author" content="Luminous418">
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="LumiROM - One UI & Galaxy AI for MediaTek Devices">
+    <meta property="og:description" content="Extreme optimization, Galaxy AI features, and built-in Knox patches for your low-end Samsung device.">
+    <meta property="og:image" content="img/ai.png">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='white' d='M13 2L3 14h7l-1 8 10-12h-7l1-8z'/></svg>">
+
+</head>
+<body>
+
+    <!-- Floating Glow Circles -->
+    <div class="glow-bg glow-primary"></div>
+    <div class="glow-bg glow-secondary"></div>
+
+    <!-- Navigation Header -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo-link">
+                <img src="img/ai.png" alt="LumiROM Logo" class="logo-img-small">
+                <span class="logo-text">LumiROM</span>
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#what-it-does">About</a></li>
+                <li class="nav-item"><a href="#devices">Devices</a></li>
+                <li class="nav-item"><a href="#features">Features</a></li>
+                <li class="nav-item"><a href="#how-to-build">Build it</a></li>
+                <li class="nav-item"><a href="changelogs/changelogs.html">Changelogs</a></li>
+            </ul>
+            <a href="https://github.com/Luminous418/LumiROM" target="_blank" class="btn-header">View GitHub</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="hero-title">LumiROM</h1>
+            <p class="hero-subtitle">A custom ROM designed to provide a completely new, smooth experience with Galaxy AI to low-end MediaTek Samsung devices.</p>
+
+            <div class="cta-group">
+                <a href="https://t.me/LumiROMs" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #24A1DE 0%, #1e87bb 100%); box-shadow: 0 4px 15px rgba(36, 161, 222, 0.4);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    Install Now
+                </a>
+                <a href="changelogs/changelogs.html" class="btn btn-primary" style="background: linear-gradient(135deg, #6524de 0%, #5a1ebb 100%); box-shadow: 0 4px 15px rgba(101, 36, 222, 0.4);">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                    View Changelogs
+                </a>
+                <a href="#how-to-build" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                    Build It Yourself
+                </a>
+                <a href="https://github.com/Luminous418/LumiROM" target="_blank" class="btn btn-secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                    GitHub Repository
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- What It Does Section -->
+    <section id="what-it-does" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How It Works</span>
+                <h2 class="section-title">What does LumiROM do?</h2>
+                <p class="section-desc">LumiROM automates the ROM reconstruction process from scratch, applying advanced patches and critical optimizations.</p>
+            </div>
+
+            <div class="what-it-does-content">
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-step-icon">1</div>
+                        <div class="step-details">
+                            <h3 class="flow-step-title">Firmware Download</h3>
+                            <p class="flow-step-desc">Downloads the official Samsung firmware directly using tools like Samloader, ensuring 100% base compatibility.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flow-step">
+                        <div class="flow-step-icon">2</div>
+                        <div class="step-details">
+                            <h3 class="flow-step-title">OTA Merging & Extraction</h3>
+                            <p class="flow-step-desc">Merges cumulative OTA patches, extracts the partition images, and mounts them in a virtual Linux environment.</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="flow-step-icon">3</div>
+                        <div class="step-details">
+                            <h3 class="flow-step-title">Optimizations & Tweaks</h3>
+                            <p class="flow-step-desc">Applies heavy debloating (removes 150+ apps), integrates Galaxy AI, patches Knox directly via Smali modifications, and tunes CPU/GPU performance via kernel.</p>
+                        </div>
+                    </div>
+
+                    <div class="flow-step">
+                        <div class="flow-step-icon">4</div>
+                        <div class="step-details">
+                            <h3 class="flow-step-title">EROFS Packaging</h3>
+                            <p class="flow-step-desc">Compresses the filesystem using the high-performance EROFS system to save crucial storage space on small partitions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card text-center" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 20px;">
+                    <div style="width: 70px; height: 70px; border-radius: 50%; background: rgba(79, 70, 229, 0.1); display: flex; align-items: center; justify-content: center; color: var(--primary-color);">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+                    </div>
+                    <h3 style="font-size: 1.5rem; font-weight: 700;">Universal Compilation</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; text-align: center;">The whole build process runs automatically either in the cloud via <b>GitHub Actions</b> or <b>locally</b> on your computer using Linux or WSL.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported Devices Section -->
+    <section id="devices" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Compatibility</span>
+                <h2 class="section-title">Supported Devices</h2>
+                <p class="section-desc">LumiROM is specifically designed and tested for popular low-end Samsung Galaxy models.</p>
+            </div>
+
+            <div class="search-container">
+                <span class="search-icon">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </span>
+                <input type="text" id="device-search" class="search-input" placeholder="Search device (e.g. A32, SM-A225F)...">
+            </div>
+
+            <div class="devices-grid" id="devices-list">
+                <!-- Device 1 -->
+                <div class="device-card-item" data-device="Samsung Galaxy A22" data-model="SM-A225F">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy A22</h3>
+                                    <span class="device-code">SM-A225F</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Excellent stability. Employs Side-FP base models modified to deliver the best hardware efficiency.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: Side-FP (A24)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device 2 -->
+                <div class="device-card-item" data-device="Samsung Galaxy A22 5G" data-model="SM-A226B">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy A22 5G</h3>
+                                    <span class="device-code">SM-A226B</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Optimized native 5G connectivity support and Kernel adaptations for EROFS mounting.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: Side-FP (A24)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device 3 -->
+                <div class="device-card-item" data-device="Samsung Galaxy A32" data-model="SM-A325F">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy A32 4G</h3>
+                                    <span class="device-code">SM-A325F</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Tuned for AMOLED screens and Fingerprint on Display (FOD) integrations using an A34 base.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: FOD (A34)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device 4 -->
+                <div class="device-card-item" data-device="Samsung Galaxy A32" data-model="SM-A325M">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy A32 4G (Latam)</h3>
+                                    <span class="device-code">SM-A325M</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Latin American variant fully supported with regional-specific firmware bases.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: FOD (A34)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device 5 -->
+                <div class="device-card-item" data-device="Samsung Galaxy F22" data-model="SM-E225F">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy F22</h3>
+                                    <span class="device-code">SM-E225F</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Tailored hardware support and optimized drivers to power the 90Hz Fluid screen.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: Side-FP (A24)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Device 6 -->
+                <div class="device-card-item" data-device="Samsung Galaxy M32" data-model="SM-M325F">
+                    <div class="glass-card device-card">
+                        <div>
+                            <div class="device-header">
+                                <div class="device-icon-wrapper">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+                                </div>
+                                <div>
+                                    <h3 class="device-model">Galaxy M32</h3>
+                                    <span class="device-code">SM-M325F</span>
+                                </div>
+                            </div>
+                            <p style="color: var(--text-secondary); font-size: 0.9rem;">Massive battery managed more efficiently with custom refined power profiles.</p>
+                        </div>
+                        <div class="device-footer">
+                            <span>Base: FOD (A34)</span>
+                            <span style="color: #22c55e; font-weight: 600;">Supported</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="note-box">
+                <span class="note-icon">💡</span>
+                <span class="note-text"><strong>Base Information:</strong> Fingerprint on Display (FOD) devices will use bases from FOD models (e.g., A32 → A34 base). Side-FP devices will use Side-FP bases (e.g., A22 → A24 base).</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Explore the Features</h2>
+                <p class="section-desc">A complete suite of system optimizations, advanced security modifications, and Galaxy AI magic.</p>
+            </div>
+
+            <div class="feature-tabs">
+                <button class="tab-btn active" data-tab="system">⚡ System Optimization</button>
+                <button class="tab-btn tab-ai" data-tab="ai">✨ Galaxy AI</button>
+                <button class="tab-btn" data-tab="knox">🛡️ Knox Patches</button>
+                <button class="tab-btn" data-tab="extra">🛠️ More Features</button>
+            </div>
+
+            <!-- Tab System -->
+            <div class="tab-content active" id="features-system">
+                <div class="features-list-grid">
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">🗑️</div>
+                        <div>
+                            <h3 class="feature-list-title">Heavy Debloat</h3>
+                            <p class="feature-list-desc">More than 150 bloatware applications and background processes removed to free up RAM and storage.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">⚡</div>
+                        <div>
+                            <h3 class="feature-list-title">Deodexed ROM</h3>
+                            <p class="feature-list-desc">System files optimized and deodexed for faster application launches and reduced partition sizes.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">⚙️</div>
+                        <div>
+                            <h3 class="feature-list-title">EROFS Filesystem</h3>
+                            <p class="feature-list-desc">Modern read-only compressed filesystem providing high-speed storage access and saving storage space.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">🔋</div>
+                        <div>
+                            <h3 class="feature-list-title">Battery & CPU Tweaks</h3>
+                            <p class="feature-list-desc">Intelligent CPU governor configuration and process throttling to extend battery life without losing performance.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">📱</div>
+                        <div>
+                            <h3 class="feature-list-title">High-End Animations</h3>
+                            <p class="feature-list-desc">Fluid flagship-grade Samsung animations unlocked and tailored for high-refresh-rate 90Hz screens.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">📶</div>
+                        <div>
+                            <h3 class="feature-list-title">VoLTE Fix & Init Tweaks</h3>
+                            <p class="feature-list-desc">Active carrier VoLTE support patched globally alongside custom performance scripts during device boot.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Galaxy AI -->
+            <div class="tab-content" id="features-ai">
+                <div class="features-list-grid">
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">📞</div>
+                        <div>
+                            <h3 class="feature-list-title">Call Assist</h3>
+                            <p class="feature-list-desc">Modify your voice and make real-time translated calls using built-in AI models.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">✍️</div>
+                        <div>
+                            <h3 class="feature-list-title">Writing Assist</h3>
+                            <p class="feature-list-desc">Writing tools in the Samsung Keyboard to translate, compose, and change the tone of your text.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">📝</div>
+                        <div>
+                            <h3 class="feature-list-title">Note Assist</h3>
+                            <p class="feature-list-desc">Automatic note organization, formatting, spelling corrections, and quick text summarization.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">🎙️</div>
+                        <div>
+                            <h3 class="feature-list-title">Transcript Assist</h3>
+                            <p class="feature-list-desc">Voice recording transcripts, translations, and summaries with intelligent speaker identification.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">🌐</div>
+                        <div>
+                            <h3 class="feature-list-title">Browsing Assist</h3>
+                            <p class="feature-list-desc">Summarize and translate entire articles inside the official Samsung Internet browser.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card ai-card">
+                        <div class="feature-list-icon">🖼️</div>
+                        <div>
+                            <h3 class="feature-list-title">Photo Assist</h3>
+                            <p class="feature-list-desc">Generative photo editor: erase unwanted objects, move subjects, and fill in cropped margins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Knox Patches -->
+            <div class="tab-content" id="features-knox">
+                <div style="margin-bottom: 32px;">
+                    <p style="color: var(--text-secondary); font-size: 1.05rem; margin-bottom: 24px;">Knox security and integrity are patched directly via Smali modifications. <strong>No root or extra modules are required</strong> to run these secure apps:</p>
+                    <div class="apps-grid">
+                        <div class="app-card">
+                            <span class="app-icon">🔒</span>
+                            <span class="app-name">Secure Folder</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">❤️</span>
+                            <span class="app-name">Samsung Health</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">🏥</span>
+                            <span class="app-name">Health Monitor</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">🎛️</span>
+                            <span class="app-name">Samsung Flow</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">🛡️</span>
+                            <span class="app-name">Auto Blocker</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">☁️</span>
+                            <span class="app-name">Samsung Cloud (FMM)</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">🌐</span>
+                            <span class="app-name">Secure Wi-Fi</span>
+                        </div>
+                        <div class="app-card">
+                            <span class="app-icon">🏠</span>
+                            <span class="app-name">SmartThings</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="features-list-grid">
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">🛡️</div>
+                        <div>
+                            <h3 class="feature-list-title">Knox Guard Disabled</h3>
+                            <p class="feature-list-desc">Disabled to prevent carrier-locking on financed or locked devices.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">📸</div>
+                        <div>
+                            <h3 class="feature-list-title">Bypass Flag Secure</h3>
+                            <p class="feature-list-desc">Allows screenshots and screen recording inside restricted apps globally.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">🔑</div>
+                        <div>
+                            <h3 class="feature-list-title">Signature Verification</h3>
+                            <p class="feature-list-desc">Lowered signature verification scheme limits to make sideloading modified apps simpler.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab Extra -->
+            <div class="tab-content" id="features-extra">
+                <div class="features-list-grid">
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">📸</div>
+                        <div>
+                            <h3 class="feature-list-title">Screenshot Anywhere</h3>
+                            <p class="feature-list-desc">Take screenshots in any context without restriction, enabled globally across the system.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">📹</div>
+                        <div>
+                            <h3 class="feature-list-title">Native Screen Recorder</h3>
+                            <p class="feature-list-desc">Official Samsung screen recording utility active by default on all devices.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="glass-card feature-list-card">
+                        <div class="feature-list-icon">🎧</div>
+                        <div>
+                            <h3 class="feature-list-title">Bluetooth Recording</h3>
+                            <p class="feature-list-desc">Full support for recording calls and media audio using external Bluetooth headphone microphones.</p>
+                        </div>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use / Installation Section -->
+    <section id="how-to-build" class="reveal">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Build It Yourself</span>
+                <h2 class="section-title">Build Methods</h2>
+                <p class="section-desc">Select your compilation method: automate through GitHub in the cloud, or compile locally on your Linux machine.</p>
+            </div>
+
+            <div class="guide-tabs">
+                <button class="guide-tab-btn active" data-guide="actions">🤖 GitHub Actions (Cloud)</button>
+                <button class="guide-tab-btn" data-guide="local">💻 Local Build</button>
+            </div>
+
+            <!-- Panel GitHub Actions -->
+            <div class="guide-panel active" id="guide-actions">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Fork the Repository</h3>
+                            <div class="step-content">
+                                <p>Give a ⭐ star to the official LumiROM repository on GitHub.</p>
+                                <p><strong>Fork</strong> the repository to your own GitHub account to execute custom build workflows.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Run the Workflow</h3>
+                            <div class="step-content">
+                                <p>Open your forked repository and click on the <strong>Actions</strong> tab.</p>
+                                <p>Select <strong>LumiROM Tools</strong> from the left sidebar and click <strong>Run workflow</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Configure Device Parameters</h3>
+                            <div class="step-content">
+                                <p>Fill in your model inside the <code>STOCK_DEVICE_MODEL</code> option (it must exist in the <code>/LumiROM/Devices</code> folder of your repository).</p>
+                                <p>Set Kernel BPF Version: Check <strong>True</strong> if your kernel BPF version is 5.4 or lower.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Hugging Face Upload (Optional)</h3>
+                            <div class="step-content">
+                                <p>The workflow can automatically upload the final ROM file to Hugging Face servers:</p>
+                                <div class="alert-box alert-tip">
+                                    <strong>💡 Token Setup:</strong> <br>- Create a Hugging Face account <br>
+                                    - Go to Settings → Access Tokens <br>
+                                    - Generate a write token. <br>
+                                    - Go back to your GitHub repository and go to Settings → Secrets <br>
+                                    - Add the token under the name <code>HF_TOKEN</code>.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Panel Compilación Local -->
+            <div class="guide-panel" id="guide-local">
+                <div class="steps-list">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Clone the Repository</h3>
+                            <div class="step-content">
+                                <p>Open a Linux terminal (Ubuntu/Debian or WSL on Windows) and clone the source code:</p>
+                                <div class="terminal code-block-wrapper">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dots">
+                                            <span class="terminal-dot dot-red"></span>
+                                            <span class="terminal-dot dot-yellow"></span>
+                                            <span class="terminal-dot dot-green"></span>
+                                        </div>
+                                        <span class="terminal-title">bash</span>
+                                        <button class="terminal-copy code-copy-btn">Copy</button>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <code>git clone https://github.com/Luminous418/LumiROM.git
+cd LumiROM</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Configure Build Variables</h3>
+                            <div class="step-content">
+                                <p>Edit the top variables in the <code>build_local.sh</code> script:</p>
+                                <div class="terminal code-block-wrapper">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dots">
+                                            <span class="terminal-dot dot-red"></span>
+                                            <span class="terminal-dot dot-yellow"></span>
+                                            <span class="terminal-dot dot-green"></span>
+                                        </div>
+                                        <span class="terminal-title">build_local.sh</span>
+                                        <button class="terminal-copy code-copy-btn">Copy</button>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <code>STOCK_DEVICE="SM-A325F"       # Your device model
+USE_MODS="Yes"                # Include fixes and mods
+USE_GALAXY_AI="Yes"           # Include Galaxy AI features
+USE_UI_8_TETHERING_APEX="False"  # Set to True if kernel BPF < 5.10</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Execute the Script</h3>
+                            <div class="step-content">
+                                <p>Run the script to download dependencies, apply modifications, and package the flashable ZIP into the <code>ROM/</code> directory:</p>
+                                <div class="terminal code-block-wrapper">
+                                    <div class="terminal-header">
+                                        <div class="terminal-dots">
+                                            <span class="terminal-dot dot-red"></span>
+                                            <span class="terminal-dot dot-yellow"></span>
+                                            <span class="terminal-dot dot-green"></span>
+                                        </div>
+                                        <span class="terminal-title">bash</span>
+                                        <button class="terminal-copy code-copy-btn">Copy</button>
+                                    </div>
+                                    <div class="terminal-body">
+                                        <code>bash build_local.sh</code>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-num">4</div>
+                        <div class="step-body">
+                            <h3 class="step-title">Manage Firmware Cache</h3>
+                            <div class="step-content">
+                                <p>The build tool features a smart cache manager to avoid downloading clean firmwares multiple times. Test it interactively below:</p>
+                                
+                                <div class="cache-panel">
+                                    <div class="cache-buttons">
+                                        <button class="btn-terminal active" data-cmd="status">cache_manager.sh status</button>
+                                        <button class="btn-terminal" data-cmd="check">cache_manager.sh check</button>
+                                        <button class="btn-terminal" data-cmd="size">cache_manager.sh size</button>
+                                        <button class="btn-terminal" data-cmd="list">cache_manager.sh list</button>
+                                        <button class="btn-terminal" data-cmd="clear">cache_manager.sh clear</button>
+                                    </div>
+
+                                    <div class="terminal">
+                                        <div class="terminal-header">
+                                            <div class="terminal-dots">
+                                                <span class="terminal-dot dot-red"></span>
+                                                <span class="terminal-dot dot-yellow"></span>
+                                                <span class="terminal-dot dot-green"></span>
+                                            </div>
+                                            <span class="terminal-title">Interactive Console</span>
+                                            <button class="terminal-copy" id="terminal-copy-btn">Copy Command</button>
+                                        </div>
+                                        <div class="terminal-body" id="terminal-content"><span class="terminal-prompt">$</span><span class="terminal-cmd">bash scripts/cache_manager.sh status</span>
+<span class="terminal-output">[CACHE STATUS]
+Checking firmware cache directory...
+Cache status: ENABLED
+Total firmware versions cached: 3
+Latest build cached: SM-A346B (One UI 8.5)
+Integrity check: PASS</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Telegram & Community Section -->
+    <section class="reveal">
+        <div class="container">
+            <div class="cta-banner">
+                <h2 class="cta-banner-title">Don't want to build it yourself?</h2>
+                <p class="cta-banner-desc">Join our Telegram channel. We regularly release pre-compiled flashable LumiROM updates, announcements, and provide active community troubleshooting support.</p>
+                <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+                    <a href="https://t.me/LumiROMs" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #24A1DE 0%, #1e87bb 100%); box-shadow: 0 4px 15px rgba(36, 161, 222, 0.4);">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                        Telegram Channel
+                    </a>
+                    <a href="https://github.com/Luminous418/LumiROM/issues" target="_blank" class="btn btn-secondary">
+                        Report a Bug
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <img src="img/ai.png" alt="LumiROM Logo" style="height: 28px; width: auto;">
+                <span style="font-weight: 800; color: white;">LumiROM</span>
+            </div>
+            <div>
+                <p>&copy; 2026 LumiROM. MIT Licensed.</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://github.com/samloader/samloader" target="_blank">samloader</a>
+                <a href="https://github.com/iBotPeaches/Apktool" target="_blank">apktool</a>
+                <a href="https://github.com/sekaiacg/erofs-utils" target="_blank">erofs-utils</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/script.js"></script>
+</body>
+</html>
