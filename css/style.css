@@ -101,7 +101,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(5, 6, 11, 0.8);
+    background-color: rgba(11, 8, 5, 0.342);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom-color: var(--card-border);
@@ -1104,6 +1104,10 @@ footer {
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex !important;
+    }
+
+    header.scrolled {
+        padding: 16px 0;
     }
     
     .nav-menu {
