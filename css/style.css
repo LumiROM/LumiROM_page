@@ -502,7 +502,6 @@ header.scrolled {
     font-family: var(--font-family);
     font-size: 1rem;
     transition: var(--transition-smooth);
-    backdrop-filter: blur(8px);
 }
 
 .search-input:focus {
@@ -514,7 +513,7 @@ header.scrolled {
 .search-icon {
     position: absolute;
     left: 20px;
-    top: 50%;
+    top: 55%;
     transform: translateY(-50%);
     color: var(--text-secondary);
     pointer-events: none;
