@@ -3,16 +3,59 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelogs - LumiROM documentation</title>
-  <meta name="description" content="Full version history and changelogs for LumiROM - the custom One UI ROM for Samsung MediaTek devices." />
-  <meta name="keywords" content="LumiROM, changelog, update history, one ui, samsung, mediatek" />
+  <title>Search - LumiROM documentation</title>
   <meta name="author" content="Luminous418" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="LumiROM - Changelogs" />
-  <meta property="og:description" content="Full version history and changelogs for LumiROM." />
-  <meta property="og:image" content="_static/logo.png" />
   <link rel="stylesheet" href="_static/lumirom.css" />
   <link rel="shortcut icon" href="_static/logo.png" />
+  <style>
+    .search-page-form {
+      margin-bottom: 2em;
+      display: flex;
+      gap: 10px;
+    }
+    .search-page-form input[type="text"] {
+      padding: 10px;
+      flex: 1;
+      max-width: 300px;
+      min-width: 0;
+      border: 1px solid var(--border-color);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      border-radius: var(--radius-sm);
+    }
+    .search-page-form input[type="submit"] {
+      padding: 10px 20px;
+      background: var(--primary);
+      border: none;
+      color: white;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .search-results-list {
+      list-style: none;
+      padding: 0;
+    }
+    .search-results-list li {
+      margin-bottom: 1.5em;
+      padding-bottom: 1.5em;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .search-results-list h3 {
+      margin-top: 0;
+      margin-bottom: 0.5em;
+    }
+    .search-results-list p {
+      margin: 0;
+      color: var(--text-secondary);
+    }
+    .search-results-list strong {
+      color: var(--primary-light);
+      background: rgba(59, 130, 246, 0.15);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+  </style>
 </head>
 <body>
 <div id="fmain">
@@ -26,7 +69,7 @@
              style="width:36px;height:36px;border-radius:50%;vertical-align:middle;margin-right:6px;" />
       </li>
       <li><a href="https://github.com/Luminous418/LumiROM">LumiROM</a> </li>
-      <li class="nav-item nav-item-this"><a href="">Changelogs</a></li>
+      <li class="nav-item nav-item-this"><a href="">Search</a></li>
       <li class="right">
         <div class="inline-search" role="search">
           <form class="inline-search" action="search.html" method="get">
@@ -45,21 +88,13 @@
       <div class="sphinxsidebarwrapper">
         <div>
           <h3><a href="index.html">Documents</a></h3>
-          <ul class="current">
+          <ul>
             <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a></li>
             <li class="toctree-l1"><a class="reference internal" href="devices.html">Supported Devices</a></li>
             <li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
             <li class="toctree-l1"><a class="reference internal" href="build.html">Build Methods</a></li>
-            <li class="toctree-l1 current"><a class="current reference internal" href="changelogs.html">Changelogs</a></li>
+            <li class="toctree-l1"><a class="reference internal" href="changelogs.html">Changelogs</a></li>
             <li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Stats</h4>
-          <ul>
-            <li style="padding:4px 10px;font-size:0.82em;color:var(--text-secondary);">13 releases</li>
-            <li style="padding:4px 10px;font-size:0.82em;color:var(--text-secondary);">6 series</li>
-            <li style="padding:4px 10px;font-size:0.82em;color:var(--text-secondary);">Latest: 8.6.2</li>
           </ul>
         </div>
       </div>
@@ -70,21 +105,18 @@
       <div class="bodywrapper">
         <div class="body" role="main">
 
-          <section id="changelogs-page">
-            <h1>Changelogs<a class="headerlink" href="#changelogs-page" title="Link to this heading">¶</a></h1>
-            <p>Every version, every fix, every feature. Browse the complete release history of LumiROM.
-            Click a version in the panel on the left to view its details.</p>
+          <section id="search">
+            <h1>Search<a class="headerlink" href="#search" title="Link to this heading">¶</a></h1>
+            
+            <form class="search-page-form" action="search.html" method="get">
+              <input type="text" name="q" id="search-input" placeholder="Search the docs..." />
+              <input type="submit" value="Search" />
+            </form>
 
-            <!-- Changelog layout: version sidebar + detail panel -->
-            <div class="cl-layout">
-
-              <!-- Version list sidebar -->
-              <nav id="cl-sidebar" class="cl-sidebar" aria-label="Changelog versions"></nav>
-
-              <!-- Detail panel -->
-              <main id="cl-panel" class="cl-panel" aria-live="polite"></main>
-
+            <div id="search-results">
+              <!-- Search results will be rendered here by search.js -->
             </div>
+            
           </section>
 
           <div class="clearer"></div>
@@ -101,11 +133,7 @@
     <ul>
       <li><img src="_static/logo.png" alt="" style="width:36px;height:36px;border-radius:50%;vertical-align:middle;margin-right:6px;" /></li>
       <li><a href="https://github.com/Luminous418/LumiROM">LumiROM</a> </li>
-      <li class="nav-item nav-item-this"><a href="">Changelogs</a></li>
-      <li class="right">
-        &#171; <a href="build.html">Build Methods</a> &nbsp;|&nbsp;
-        <a href="license.html">License</a> 
-      </li>
+      <li class="nav-item nav-item-this"><a href="">Search</a></li>
     </ul>
   </div>
 
@@ -117,6 +145,6 @@
 
 </div>
 <script src="_static/lumirom.js"></script>
-<script src="_static/changelogs.js"></script>
+<script src="_static/search.js"></script>
 </body>
 </html>
