@@ -2,7 +2,30 @@
 
 const CHANGELOGS = [
     {
-        version: '8.6.2', series: '8.6.x', tag: 'latest', date: '2026-05',
+        version: '8.6.4', series: '8.6.x', tag: 'latest', date: '2026-08',
+        sections: {
+            fixes: ['Now OTA app appears on homescreen.'],
+            features: [
+                'Updated the OTA app, including support for the phones I support on the ROM.',
+                'Also you can now use the ROM if you have it downloaded on the sdcard.'
+            ],
+        }
+    },
+    {
+        version: '8.6.3', series: '8.6.x', tag: 'stable', date: '2026-08',
+        sections: {
+            fixes: ['Attempt to fix hotspot.'],
+            features: [
+                'Added an OTA Updater app for the rom called Cloudy, with this app you can stay updated with the rom and forget about complicated steps on flashing the ROM.'
+            ],
+            deviceSpecific: [
+                'New A34 base: A346BXXSGFZG4 with 05-07-2026 (July) security patch.',
+                'New A24 base: A245FXXSDFZG3 with 05-07-2026 (July) security patch'
+            ],
+        }
+    },
+    {
+        version: '8.6.2', series: '8.6.x', tag: 'stable', date: '2026-05',
         sections: {
             fixes: ['No fixes in this release.'],
             features: [

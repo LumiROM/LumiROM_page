@@ -176,8 +176,8 @@
                             <button class="copy-term-btn">Copy</button>
                           </div>
                           <div class="terminal-body">
-                            <code>git clone https://github.com/Luminous418/LumiROM.git
-cd LumiROM</code>
+                            <span class="terminal-output">git clone https://github.com/Luminous418/LumiROM.git
+cd LumiROM</span>
                           </div>
                         </div>
                       </div>
@@ -204,9 +204,10 @@ STOCK_DEVICE="$1"               # Your device model
 TARGET_DEVICE="$2"              # The phone you want to port
 TARGET_CSC="$3"                 # The region from the target device
 TARGET_IMEI="$4"                # The IMEI from target device
-USE_MODS="Yes"                  # Include mods (Vulkan fix, VoLTE fix, tweaks, wallpapers)
-USE_GALAXY_AI="Yes"             # Include Galaxy AI features
-USE_UI_8_TETHERING_APEX="False" # Set to True if kernel BPF &lt; 5.10
+USE_MODS="$5"                   # Include mods (OTA app, Vulkan fix, VoLTE fix, tweaks, wallpapers)
+USE_GALAXY_AI="$6"              # Include Galaxy AI features
+USE_UI_8_TETHERING_APEX="$7"    # Set to true if kernel BPF &lt; 5.10
+LUMIROM_MAINTAINER="$8"         # Your GitHub name
 </span>
                           </div>
                         </div>
@@ -220,7 +221,7 @@ USE_UI_8_TETHERING_APEX="False" # Set to True if kernel BPF &lt; 5.10
                       <h3 class="step-title">Execute the Script</h3>
                       <div class="step-content">
                         <p>Run the script to download dependencies, apply modifications, and package
-                        the flashable ZIP into the <code>ROM/</code> directory <br><br>
+                        the flashable ZIP into the <code>ROM/</code> directory. <br>
                       The use for <code>build_local.sh</code>is:</p>
                         <div class="terminal-block">
                           <div class="terminal-header">
@@ -231,11 +232,10 @@ USE_UI_8_TETHERING_APEX="False" # Set to True if kernel BPF &lt; 5.10
                             <button class="copy-term-btn">Copy</button>
                           </div>
                           <div class="terminal-body">
-                            <code>bash build_local.sh &lt;STOCK_MODEL> &lt;TARGET_MODEL> &lt;CSC> &lt;IMEI></code>
+                            <code>bash build_local.sh &lt;STOCK_MODEL> &lt;TARGET_MODEL> &lt;CSC> &lt;IMEI> &lt;USE_MODS> &lt;USE_GALAXY_AI> &lt;USE_UI_8_TETHERING_APEX> &lt;LUMIROM_MAINTAINER></code>
                           </div>
                         </div>
                       </div>
-                      <p>Change accordingly to your needs but dont touch the $1, $2 etc.</p>
                     </div>
                   </div>
 
