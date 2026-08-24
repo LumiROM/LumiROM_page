@@ -135,6 +135,8 @@
                         your kernel BPF version is lower than 5.10. You can check your kernel version under
                         Settings → About phone → Software information → Kernel version. All supported devices
                         already have compatible kernels, so leave it disabled.</p>
+                        <p>Optionally, tick <code>ZIP_IMG</code> to receive the partition images (.img) inside
+                        a ZIP instead of a flashable ROM.</p>
                       </div>
                     </div>
                   </div>
@@ -222,6 +224,7 @@ USE_MODS="$5"                   # Include mods (Cloudy app, Vulkan fix, VoLTE fi
 USE_GALAXY_AI="$6"              # Include Galaxy AI features
 USE_UI_8_TETHERING_APEX="$7"    # Set to true only if kernel BPF &lt; 5.10
 LUMIROM_MAINTAINER="$8"         # Your GitHub name
+ZIP_IMG="$9"                    # true = deliver .img files in a ZIP instead of a flashable ROM
 </span>
                           </div>
                         </div>
@@ -245,7 +248,7 @@ LUMIROM_MAINTAINER="$8"         # Your GitHub name
                             <button class="copy-term-btn">Copy</button>
                           </div>
                           <div class="terminal-body">
-                            <code>bash build_local.sh &lt;STOCK_DEVICE> &lt;TARGET_DEVICE> &lt;TARGET_CSC> &lt;TARGET_IMEI> &lt;USE_MODS> &lt;USE_GALAXY_AI> &lt;USE_UI_8_TETHERING_APEX> &lt;LUMIROM_MAINTAINER></code>
+                            <code>bash build_local.sh &lt;STOCK_DEVICE> &lt;TARGET_DEVICE> &lt;TARGET_CSC> &lt;TARGET_IMEI> &lt;USE_MODS> &lt;USE_GALAXY_AI> &lt;USE_UI_8_TETHERING_APEX> &lt;LUMIROM_MAINTAINER> &lt;ZIP_IMG></code>
                           </div>
                         </div>
                         <p>Before building, the script validates all your inputs (models, CSC, IMEI) and
