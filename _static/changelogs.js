@@ -7,7 +7,7 @@ const CHANGELOGS = [
             fixes: ['Now OTA app appears on homescreen.'],
             features: [
                 'Updated the OTA app, including support for the phones I support on the ROM.',
-                'Also you can now use the ROM if you have it downloaded on the sdcard.'
+                'Also you can now install the ROM from a ZIP stored on the sdcard.'
             ],
         }
     },
@@ -36,7 +36,7 @@ const CHANGELOGS = [
                 'Some camera modes like 0.5x.'
             ],
             more: [
-                'Most of the fixes have been added onto the script. Working hard to add more features and make the scripts more stable and user-friendly.',
+                'Most of the fixes have been added to the script. Working hard to add more features and make the scripts more stable and user-friendly.',
                 'Added color to script for better understanding.',
                 'Added a builder for local use with a cache system - firmware is downloaded only once.',
                 'Added a new script, cache_manager.sh, with commands like status, check, clear, size and list to manage the cache of the imgs.'
@@ -108,7 +108,7 @@ const CHANGELOGS = [
             fixes: ['Fixed recent calls on Phone app.', 'Fixed Studio app.'],
             features: ['Removed FRP.', 'Added AI Weather on Lockscreen.', 'Added AI Wallpaper.', 'Added new game settings.'],
             more: ['LumiVENDOR is now mandatory - keep it on storage until a new update comes out.', 'Report bugs on the bug theme on the group.'],
-            bugs: ['Fix Camera green on portrait.']
+            bugs: ['Camera green tint on portrait mode.']
         }
     },
     {

@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cmd = btn.dataset.cmd;
             if (cacheOutput && cacheOutputs[cmd]) {
                 cacheOutput.innerHTML =
-                    `<span class="terminal-prompt">$</span><span class="terminal-cmd"> bash scripts/cache_manager.sh ${cmd}</span>\n<span class="terminal-output">${cacheOutputs[cmd]}</span>`;
+                    `<span class="terminal-prompt">$</span><span class="terminal-cmd"> bash scripts/firmware/cache_manager.sh ${cmd}</span>\n<span class="terminal-output">${cacheOutputs[cmd]}</span>`;
             }
         });
     });
