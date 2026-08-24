@@ -203,9 +203,10 @@ cd LumiROM</span>
                   <div class="step-item">
                     <div class="step-num">2</div>
                     <div class="step-body">
-                      <h3 class="step-title">Configure Build Variables</h3>
+                      <h3 class="step-title">Choose Your Options</h3>
                       <div class="step-content">
-                        <p>Edit the top variables in the <code>build_local.sh</code> script:</p>
+                        <p>Only the stock model, region and IMEI are required - everything else has a default.
+                        If you omit a required option, the script asks for it interactively:</p>
                         <div class="terminal-block">
                           <div class="terminal-header">
                             <span class="term-dot dot-red"></span>
@@ -214,17 +215,18 @@ cd LumiROM</span>
                             <span class="terminal-title">build_local.sh</span>
                           </div>
                           <div class="terminal-body">
-                          <span class="terminal-cmd">VARIABLES TO CONFIGURE:</span>
+                          <span class="terminal-cmd">OPTIONS:</span>
 <span class="terminal-output">
-STOCK_DEVICE="$1"               # Your phone model (must be supported)
-TARGET_DEVICE="$2"              # Base device to port from (see Supported Devices)
-TARGET_CSC="$3"                 # Region code of the base firmware
-TARGET_IMEI="$4"                # Valid 15-digit IMEI of the base device
-USE_MODS="$5"                   # Include mods (Cloudy app, Vulkan fix, VoLTE fix, tweaks, wallpapers)
-USE_GALAXY_AI="$6"              # Include Galaxy AI features
-USE_UI_8_TETHERING_APEX="$7"    # Set to true only if kernel BPF &lt; 5.10
-LUMIROM_MAINTAINER="$8"         # Your GitHub name
-ZIP_IMG="$9"                    # true = deliver .img files in a ZIP instead of a flashable ROM
+-s,  --stock &lt;SM-XXXXX>      Your phone model (must be supported)
+-c,  --csc &lt;XXX>              Region code of the base firmware (3 letters)
+-i,  --imei &lt;15 digits>       Valid IMEI of the base device
+-t,  --target &lt;SM-XXXXX>      Base device (auto-derived from stock if omitted)
+-m,  --maintainer &lt;name>      Maintainer name (default: git username)
+     --no-mods                Exclude mods (Cloudy app, Vulkan fix, VoLTE fix...)
+     --no-ai                  Exclude Galaxy AI features
+     --bpf-legacy             Enable if kernel BPF &lt; 5.10
+     --img-zip                Deliver .img files in a ZIP instead of a flashable ROM
+-h,  --help                   Show all options and supported devices
 </span>
                           </div>
                         </div>
@@ -238,7 +240,7 @@ ZIP_IMG="$9"                    # true = deliver .img files in a ZIP instead of 
                       <h3 class="step-title">Execute the Script</h3>
                       <div class="step-content">
                         <p>Run the script to download dependencies, apply modifications, and package
-                        the flashable ZIP into the <code>ROM/</code> directory. The usage is:</p>
+                        the flashable ZIP into the <code>ROM/</code> directory:</p>
                         <div class="terminal-block">
                           <div class="terminal-header">
                             <span class="term-dot dot-red"></span>
@@ -248,7 +250,7 @@ ZIP_IMG="$9"                    # true = deliver .img files in a ZIP instead of 
                             <button class="copy-term-btn">Copy</button>
                           </div>
                           <div class="terminal-body">
-                            <code>bash build_local.sh &lt;STOCK_DEVICE> &lt;TARGET_DEVICE> &lt;TARGET_CSC> &lt;TARGET_IMEI> &lt;USE_MODS> &lt;USE_GALAXY_AI> &lt;USE_UI_8_TETHERING_APEX> &lt;LUMIROM_MAINTAINER> &lt;ZIP_IMG></code>
+                            <code>bash build_local.sh -s SM-A325F -c DBT -i 353117555323497</code>
                           </div>
                         </div>
                         <p>Before building, the script validates all your inputs (models, CSC, IMEI) and
