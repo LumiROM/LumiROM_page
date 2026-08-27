@@ -3,32 +3,32 @@
 const SEARCH_INDEX = [
     {
         title: "Introduction",
-        url: "index.html",
+        url: "../",
         content: "Welcome to the documentation for LumiROM - a custom ROM designed to bring One UI and Galaxy AI to low-end Samsung MediaTek devices. What does LumiROM do? How it works Firmware Download OTA Merging & Extraction Optimizations & Tweaks EROFS Packaging Universal compilation Community."
     },
     {
         title: "Supported Devices",
-        url: "devices.html",
+        url: "../devices/",
         content: "LumiROM is specifically designed and tested for popular low-end Samsung Galaxy models powered by MediaTek chipsets. Fingerprint on Display (FOD) Devices Galaxy A32 4G SM-A325F SM-A325M Galaxy M32 SM-M325F Side Fingerprint Devices Galaxy A22 SM-A225F Galaxy A22 5G SM-A226B Galaxy F22 SM-E225F Base Information."
     },
     {
         title: "Features",
-        url: "features.html",
+        url: "../features/",
         content: "A complete suite of system optimizations, advanced security modifications, and Galaxy AI magic. Heavy Debloat Deodexed ROM EROFS Filesystem Battery & CPU Tweaks High-End Animations VoLTE Fix Call Assist Writing Assist Note Assist Transcript Assist Browsing Assist Photo Assist Knox Patches Secure Folder Samsung Health SmartThings Knox Guard Disabled Bypass Flag Secure Signature Verification Screenshot Anywhere Native Screen Recorder Bluetooth Recording."
     },
     {
         title: "Build Methods",
-        url: "build.html",
+        url: "../build/",
         content: "Select your compilation method: automate through GitHub in the cloud, or compile locally on your Linux machine. GitHub Actions (Cloud) Fork the Repository Run the Workflow Configure Device Parameters Hugging Face Upload Local Build Clone the Repository Configure Build Variables Execute the Script Manage Firmware Cache."
     },
     {
         title: "Changelogs",
-        url: "changelogs.html",
+        url: "../changelogs/",
         content: "Every version, every fix, every feature. Browse the complete release history of LumiROM. Version history updates fixes bugs features."
     },
     {
         title: "License",
-        url: "license.html",
+        url: "../license/",
         content: "LumiROM is open source software. The scripts, tooling and build system are distributed under the MIT License. Third-party Tools samloader Apktool erofs-utils Magisk."
     }
 ];
