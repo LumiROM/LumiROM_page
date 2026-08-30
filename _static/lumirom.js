@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sidebarHeaders.forEach(header => {
         header.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                // Prevenir navegación si el enlace es solo un #
+                // Prevent navigation if the link is just a "#"
                 if (e.target.tagName === 'A' && e.target.getAttribute('href') === '#') {
                     e.preventDefault();
                 }
@@ -132,4 +132,86 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-})
+
+    // ── Material 3 entrance animations (anime.js) ───────────────────
+    initAnimations();
+});
+
+/* ── anime.js loader + entrance timeline ────────────────────────── */
+function loadAnime() {
+    return new Promise((resolve, reject) => {
+        if (window.anime) return resolve();
+        const s = document.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js';
+        s.onload = resolve;
+        s.onerror = reject;
+        document.head.appendChild(s);
+    });
+}
+
+function initAnimations() {
+    const root = document.documentElement;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Reduced motion → reveal everything immediately.
+    if (reduce) {
+        root.classList.remove('js');
+        return;
+    }
+
+    window.__lumiAnimStarted = true;
+    loadAnime()
+        .then(() => requestAnimationFrame(buildTimeline))
+        .catch(() => root.classList.remove('js')); // anime unavailable → reveal all
+}
+
+function buildTimeline() {
+    if (typeof anime === 'undefined') {
+        document.documentElement.classList.remove('js');
+        return;
+    }
+
+    const tl = anime.timeline({
+        easing: 'easeOutExpo',
+        duration: 600,
+        complete: function () {
+            // Reveal everything; also fixes changelog re-renders that
+            // recreate .cl-hero / .cl-section after a sidebar click.
+            document.documentElement.classList.remove('js');
+            window.__lumiAnimated = true;
+        }
+    });
+
+    if (document.querySelector('.related:first-of-type')) {
+        tl.add({ targets: '.related:first-of-type', opacity: [0, 1], translateY: [-16, 0], duration: 500 }, 0);
+    }
+    if (document.querySelector('.sphinxsidebarwrapper')) {
+        tl.add({ targets: '.sphinxsidebarwrapper', opacity: [0, 1], translateX: [-20, 0], duration: 500 }, 80);
+    }
+
+    const groups = [
+        '.flow-step', '.device-card', '.feature-card', '.app-card', '.step-item',
+        '.cl-sidebar-item', '.cl-hero', '.cl-section', '.highlight-box',
+        '.admonition', '.note-box', '.alert-box'
+    ];
+    let at = 180;
+    groups.forEach(function (sel) {
+        if (document.querySelector(sel)) {
+            tl.add({
+                targets: sel,
+                opacity: [0, 1],
+                translateY: [18, 0],
+                delay: anime.stagger(60),
+                duration: 560
+            }, at);
+            at += 110;
+        }
+    });
+}
+
+// Safety net: if animations never started, reveal content after load.
+window.addEventListener('load', function () {
+    if (!window.__lumiAnimStarted) {
+        document.documentElement.classList.remove('js');
+    }
+});
