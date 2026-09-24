@@ -19,7 +19,12 @@ const SEARCH_INDEX = [
     {
         title: "Build Methods",
         url: "../build/",
-        content: "Select your compilation method: automate through GitHub in the cloud, or compile locally on your Linux machine. GitHub Actions (Cloud) Fork the Repository Run the Workflow Configure Device Parameters Hugging Face Upload Local Build Clone the Repository Configure Build Variables Execute the Script Manage Firmware Cache."
+        content: "Select your compilation method: automate through GitHub in the cloud, compile locally on your Linux machine via the CLI, or use the guided terminal UI. GitHub Actions (Cloud) Fork the Repository Run the Workflow Configure Device Parameters Hugging Face Upload Local Build CLI Clone the Repository Configure Build Variables Execute the Script Manage Firmware Cache Terminal UI TUI."
+    },
+    {
+        title: "Terminal UI (TUI)",
+        url: "../build/#local-build-tui",
+        content: "LumiROM Builder is a guided terminal UI that wraps build_local.sh. Install the TUI dependencies with pip, launch it with python3 -m scripts.tui, fill the form (Stock device, CSC always uppercased, IMEI of the base device, Maintainer and toggles) and press Start Build. The build runs in a real embedded terminal with colors, progress bars and sudo prompts, so type your password there. Controls: Start Build, Cancel Build, Ctrl+X to cancel, Ctrl+S to save, Ctrl+Q to quit. The command is previewed and artifacts are listed when it finishes."
     },
     {
         title: "Changelogs",

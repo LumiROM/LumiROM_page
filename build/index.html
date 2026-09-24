@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
   <title>Build Methods - LumiROM documentation</title>
-  <meta name="description" content="How to build LumiROM: GitHub Actions cloud build or local Linux compilation guide." />
-  <meta name="keywords" content="LumiROM, build, compile, github actions, local build, build_local.sh" />
+  <meta name="description" content="How to build LumiROM: GitHub Actions cloud build, local Linux CLI, or the LumiROM Builder terminal UI (TUI)." />
+  <meta name="keywords" content="LumiROM, build, compile, github actions, local build, build_local.sh, terminal ui, tui, textual" />
   <meta name="author" content="Luminous418" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LumiROM - Build Methods" />
-  <meta property="og:description" content="How to build LumiROM using GitHub Actions or locally on your Linux machine." />
+  <meta property="og:description" content="How to build LumiROM using GitHub Actions, the local CLI, or the LumiROM Builder TUI." />
   <meta property="og:image" content="../_static/logo.png" />
   <link rel="stylesheet" href="../_static/lumirom.css" />
   <link rel="shortcut icon" href="../_static/logo.png" />
@@ -62,6 +62,7 @@
               <ul>
                 <li><a class="reference internal" href="#github-actions">GitHub Actions (Cloud)</a></li>
                 <li><a class="reference internal" href="#local-build">Local Build</a></li>
+                <li><a class="reference internal" href="#local-build-tui">Terminal UI (TUI)</a></li>
               </ul>
             </li>
           </ul>
@@ -76,12 +77,13 @@
 
           <section id="build">
             <h1>Build Methods<a class="headerlink" href="#build" title="Link to this heading">¶</a></h1>
-            <p>Select your compilation method: automate through GitHub in the cloud, or compile locally
-            on your Linux machine. Both methods produce identical flashable ZIP outputs.</p>
+            <p>Select your compilation method: automate through GitHub in the cloud, compile locally
+            via the CLI, or use the guided terminal UI. All methods produce identical flashable ZIP outputs.</p>
 
             <div class="guide-tabs">
               <button class="guide-tab-btn active" data-guide="actions">🤖 GitHub Actions (Cloud)</button>
               <button class="guide-tab-btn" data-guide="local">💻 Local Build</button>
+              <button class="guide-tab-btn" data-guide="tui">🖥️ Terminal UI (TUI)</button>
             </div>
 
             <!-- ── GitHub Actions panel ─────────────────────────────── -->
@@ -192,10 +194,8 @@
                             <span class="terminal-title">bash</span>
                             <button class="copy-term-btn">Copy</button>
                           </div>
-                          <div class="terminal-body">
-                            <span class="terminal-output">git clone https://github.com/LumiROM/LumiROM.git
-cd LumiROM</span>
-                          </div>
+                          <div class="terminal-body"><span class="terminal-output">git clone https://github.com/LumiROM/LumiROM.git
+cd LumiROM</span></div>
                         </div>
                       </div>
                     </div>
@@ -215,8 +215,7 @@ cd LumiROM</span>
                             <span class="term-dot dot-green"></span>
                             <span class="terminal-title">build_local.sh</span>
                           </div>
-                          <div class="terminal-body">
-                          <span class="terminal-cmd">OPTIONS:</span>
+                          <div class="terminal-body"><span class="terminal-cmd">OPTIONS:</span>
 <span class="terminal-output">
 -s,  --stock &lt;SM-XXXXX>      Your phone model (must be supported)
 -c,  --csc &lt;XXX>              Region code of the base firmware (3 letters)
@@ -228,8 +227,7 @@ cd LumiROM</span>
      --bpf-legacy             Enable if kernel BPF &lt; 5.10
      --img-zip                Deliver .img files in a ZIP instead of a flashable ROM
 -h,  --help                   Show all options and supported devices
-</span>
-                          </div>
+</span></div>
                         </div>
                       </div>
                     </div>
@@ -250,9 +248,7 @@ cd LumiROM</span>
                             <span class="terminal-title">bash</span>
                             <button class="copy-term-btn">Copy</button>
                           </div>
-                          <div class="terminal-body">
-                            <code>bash build_local.sh -s SM-A325F -c DBT -i 353117555323497</code>
-                          </div>
+                          <div class="terminal-body"><code>bash build_local.sh -s SM-A325F -c DBT -i 353117555323497</code></div>
                         </div>
                         <p>Before building, the script validates all your inputs (models, CSC, IMEI) and
                         detects the One UI version automatically. Builds made locally are tagged as
@@ -285,16 +281,117 @@ cd LumiROM</span>
                             <span class="terminal-title">Interactive Console</span>
                             <button class="copy-term-btn" id="cache-copy-btn">Copy Command</button>
                           </div>
-                          <div class="terminal-body" id="cache-output">
-                            <span class="terminal-prompt">$</span><span class="terminal-cmd"> bash scripts/firmware/cache_manager.sh status</span>
+                          <div class="terminal-body" id="cache-output"><span class="terminal-prompt">$</span><span class="terminal-cmd"> bash scripts/firmware/cache_manager.sh status</span>
 <span class="terminal-output">[CACHE STATUS]
 Checking firmware cache directory...
 Cache status: ENABLED
 Total firmware versions cached: 3
 Latest build cached: SM-A346B (One UI 8.5)
-Integrity check: PASS</span>
-                          </div>
+Integrity check: PASS</span></div>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </section>
+            </div>
+
+            <!-- ── Terminal UI (TUI) panel ──────────────────────────── -->
+            <div class="guide-panel" id="guide-tui">
+              <section id="local-build-tui">
+                <h2>Terminal UI (TUI)<a class="headerlink" href="#local-build-tui" title="Link to this heading">¶</a></h2>
+                <p>If you prefer a guided interface, <strong>LumiROM Builder</strong> is a terminal UI
+                that wraps <code>build_local.sh</code>. Fill a form on the right, watch the build run in a
+                real embedded terminal on the left, and get the resulting ZIP listed when it finishes.
+                It requires the same resources as the CLI build.</p>
+
+                <div class="steps-list">
+
+                  <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-body">
+                      <h3 class="step-title">Clone the Repository</h3>
+                      <div class="step-content">
+                        <p>Open a Linux terminal and clone the source code:</p>
+                        <div class="terminal-block">
+                          <div class="terminal-header">
+                            <span class="term-dot dot-red"></span>
+                            <span class="term-dot dot-yellow"></span>
+                            <span class="term-dot dot-green"></span>
+                            <span class="terminal-title">bash</span>
+                            <button class="copy-term-btn">Copy</button>
+                          </div>
+                          <div class="terminal-body"><span class="terminal-output">git clone https://github.com/LumiROM/LumiROM.git
+cd LumiROM</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-body">
+                      <h3 class="step-title">Install the TUI Dependencies</h3>
+                      <div class="step-content">
+                        <p>Python 3.10 or newer is required. Install the TUI dependencies:</p>
+                        <div class="terminal-block">
+                          <div class="terminal-header">
+                            <span class="term-dot dot-red"></span>
+                            <span class="term-dot dot-yellow"></span>
+                            <span class="term-dot dot-green"></span>
+                            <span class="terminal-title">bash</span>
+                            <button class="copy-term-btn">Copy</button>
+                          </div>
+                          <div class="terminal-body"><code>python3 -m pip install --break-system-packages -r scripts/tui/requirements.txt</code></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-body">
+                      <h3 class="step-title">Launch the TUI</h3>
+                      <div class="step-content">
+                        <p>Start LumiROM Builder from the repository root:</p>
+                        <div class="terminal-block">
+                          <div class="terminal-header">
+                            <span class="term-dot dot-red"></span>
+                            <span class="term-dot dot-yellow"></span>
+                            <span class="term-dot dot-green"></span>
+                            <span class="terminal-title">bash</span>
+                            <button class="copy-term-btn">Copy</button>
+                          </div>
+                          <div class="terminal-body"><code>python3 -m scripts.tui</code></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-body">
+                      <h3 class="step-title">Fill the Form and Build</h3>
+                      <div class="step-content">
+                        <p>In the right panel, choose your <strong>Stock device</strong>, type the
+                        <strong>CSC/region</strong> (3 letters, always uppercased automatically) and the
+                        <strong>IMEI</strong> of the base device, then set your <strong>Maintainer</strong>
+                        name. You can also toggle mods, Galaxy AI, the BPF-legacy option, image-only ZIP
+                        delivery and an incremental build. The exact command is always previewed on the left.</p>
+                        <p>Press <strong>Start Build</strong> to run it. The build executes in the terminal
+                        panel on the left - because it is a real terminal, colors, progress bars and
+                        <code>sudo</code> prompts work as usual, so type your password there when asked.</p>
+                        <div class="alert-box alert-tip">
+                          <strong>💡 Controls:</strong><br />
+                          <code>Start Build</code> - validate the form and start the build.<br />
+                          <code>Cancel Build</code> or <code>Ctrl+X</code> - stop a running build.<br />
+                          <code>Ctrl+S</code> - save the current form · <code>Ctrl+Q</code> - quit.<br />
+                          The form is remembered in <code>scripts/tui/.tui_state.json</code>.
+                        </div>
+                        <p>The TUI runs the exact same steps as the CLI method, so the
+                        <a class="reference internal" href="#local-build">firmware cache</a> and the output
+                        in the <code>ROM/</code> folder work identically.</p>
                       </div>
                     </div>
                   </div>
