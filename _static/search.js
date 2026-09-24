@@ -29,7 +29,7 @@ const SEARCH_INDEX = [
     {
         title: "Changelogs",
         url: "../changelogs/",
-        content: "Every version, every fix, every feature. Browse the complete release history of LumiROM. Version history updates fixes bugs features."
+        content: "Every version, every fix, every feature. Browse the complete release history of LumiROM. Latest 8.6.5 adds a full OTA update system with manifest and incremental support, a LumiROM disclaimer on First Time Setup translated to 30 languages, software update entry in Settings that opens Cloudy, Cloudy 2.4, more wallpapers, and fixes for black recents preview, Vulkan crashes, hotspot turn-off and the A22 camera. Version history updates fixes bugs features."
     },
     {
         title: "License",

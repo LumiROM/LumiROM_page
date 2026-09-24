@@ -2,7 +2,33 @@
 
 const CHANGELOGS = [
     {
-        version: '8.6.4', series: '8.6.x', tag: 'latest', date: '2026-08',
+        version: '8.6.5', series: '8.6.x', tag: 'latest', date: '2026-09',
+        sections: {
+            fixes: [
+                'Fixed black recents preview by switching to the OpenGL renderer.',
+                'Fixed apps crashing due to Vulkan.',
+                'Fixed the hotspot turn-off bug that had been present for ages.',
+                '[A22] Fixed camera bug.'
+            ],
+            features: [
+                'Added a full OTA update system with manifest and incremental support, so updates can be generated as small patches of the previous version.',
+                'Added a LumiROM disclaimer page on First Time Setup, with the LumiROM banner and translated to 30 languages.',
+                'The setup wizard now includes the navigation bar step, and the Recommended apps step is gone.',
+                'Added software update onto Settings that opens Cloudy.',
+                'Added LumiROM logo to About software.',
+                'Updated Cloudy to 2.4.',
+                'Added more wallpapers to the ROM - thanks to <a href="https://github.com/elytraflying" target="_blank">elytra</a> for doing it!'
+            ],
+            more: [
+                '[Repo] OTA builds: incremental target files in TARGET_FILES, OTA signing with LumiROM keys, official builds now detected by platform certificate (no more firmware-hash hacks).',
+                '[Repo] CUSTOM_PLATFORM_SIGNATURE replaces the no-op DISABLE_SIGNATURE_VERIFICATION.',
+                '[Repo] build_local.sh mirrors CI: SecSettings and SetupWizard are now decompiled, patched, rebuilt and resigned locally too.',
+                '[Repo] Refactoring: FW build functions moved to FW.sh, app patches grouped in AppPatches.sh.'
+            ]
+        }
+    },
+    {
+        version: '8.6.4', series: '8.6.x', tag: 'stable', date: '2026-08',
         sections: {
             fixes: ['Now OTA app appears on homescreen.'],
             features: [
