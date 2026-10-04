@@ -2,7 +2,32 @@
 
 const CHANGELOGS = [
     {
-        version: '8.6.5', series: '8.6.x', tag: 'latest', date: '2026-09',
+        version: '8.7.0', series: '8.7.x', tag: 'latest', date: '2026-10',
+        deviceNote: 'On the first boot after updating to 8.7.0, the device will show an "Optimizing apps" screen and then reboot on its own. This reboot is intentional - once it finishes rebooting, everything works normally, no action is needed on your side.',
+        sections: {
+            features: [
+                'Added LumiROM Settings, a brand new settings section with the LumiROM logo, translated to 34 languages and with its own icon: UI settings (choose the launcher animation type), extra settings (disable ASKS, hide developer status), reboot options menu (Normal, Recovery, Download), integrated into Settings search, and a shortcut to Cloudy via Update ROM.',
+                'Added KnoxPatch integration (built-in, no root): Samsung apps and features work again after unlocking bootloader - Samsung Health, Samsung Health Monitor, SmartThings, Find My Mobile, Samsung Cloud, Secure Folder, Private Share, Auto Blocker and Secure Wi-Fi.',
+                'Enabled the signature verification bypass, so apps signed with an old signature scheme can be installed.'
+            ],
+            fixes: [
+                'Fixed the media picker crash loop caused by missing res/*.mime.types resources in the rebuilt framework.jar.',
+                'Fixed apps that require knox patching, things like work profile should now work.',
+                'Fixed notification round style, now if you apply an effect, it will correctly render on the phone.',
+                'Fixed Samsung Camera, now 0.5x displays properly and fully works.',
+                '[a32] Fixed portrait mode that generated a green picture instead of the normal photo.'
+            ],
+            more: [
+                '[Repo] New LumiSettings mod with its own build pipeline: framework.jar and SecSettingsIntelligence are now decompiled, patched and rebuilt.',
+                '[Repo] New KnoxPatch mod: static hooks in framework.jar, knoxsdk.jar and samsungkeystoreutils.jar.',
+                '[Repo] DISABLE_SIGNATURE_VERIFICATION now patches framework.jar, and the dead PATCH_PRIVATE_SHARE was removed.',
+                '[Repo] Added a WSM debloat step so samsung watches won\'t be forgotten after a reboot.',
+                '[Repo] Removed SM-A226B (Samsung Galaxy A22 5G) support.'
+            ]
+        }
+    },
+    {
+        version: '8.6.5', series: '8.6.x', tag: 'stable', date: '2026-09',
         sections: {
             fixes: [
                 'Fixed black recents preview by switching to the OpenGL renderer.',
