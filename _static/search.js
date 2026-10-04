@@ -9,7 +9,7 @@ const SEARCH_INDEX = [
     {
         title: "Supported Devices",
         url: "../devices/",
-        content: "LumiROM is specifically designed and tested for popular low-end Samsung Galaxy models powered by MediaTek chipsets. Fingerprint on Display (FOD) Devices Galaxy A32 4G SM-A325F SM-A325M Galaxy M32 SM-M325F Side Fingerprint Devices Galaxy A22 SM-A225F Galaxy A22 5G SM-A226B Galaxy F22 SM-E225F Base Information."
+        content: "LumiROM is specifically designed and tested for popular low-end Samsung Galaxy models powered by MediaTek chipsets. Fingerprint on Display (FOD) Devices Galaxy A32 4G SM-A325F SM-A325M Galaxy M32 SM-M325F Side Fingerprint Devices Galaxy A22 SM-A225F Galaxy F22 SM-E225F Base Information."
     },
     {
         title: "Features",
