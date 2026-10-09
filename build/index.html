@@ -65,6 +65,7 @@
                 <li><a class="reference internal" href="#local-build-tui">Terminal UI (TUI)</a></li>
               </ul>
             </li>
+            <li><a class="reference internal" href="#ota-signing">OTA Signing</a></li>
           </ul>
         </div>
       </div>
@@ -399,6 +400,48 @@ cd LumiROM</span></div>
                 </div>
               </section>
             </div>
+
+            <!-- ── OTA Signing ──────────────────────────────────────── -->
+            <section id="ota-signing">
+              <h2>OTA Signing<a class="headerlink" href="#ota-signing" title="Link to this heading">¶</a></h2>
+              <p>Every flashable package - both the full ROM and the incremental OTA - is signed with
+              <code>signapk -w</code>. The signature is stored as a ZIP comment (the <em>footer</em>) that
+              Cloudy and Android's <code>RecoverySystem</code> read before installing. Without it the device
+              rejects the package with:</p>
+              <div class="alert-box alert-warning">
+                <strong>⚠️ Package verification failed:</strong><br />
+                <code>no signature in file (no footer)</code>
+              </div>
+              <p>Signing is fully automatic: the workflows (<code>OneUi8-5.yml</code> and
+              <code>OneUi8-5-Matrix.yml</code>) and <code>build_local.sh</code> sign the full ROM and then sign
+              the incremental OTA <strong>after</strong> its post-processing (the SamsungCamera cleanup re-zips
+              the package, which would otherwise strip an earlier signature). The OTA key comes from the
+              <code>OTA_PK8</code>/<code>OTA_CERT</code> secrets, or from <code>~/.lumi/keys/ota.*</code>
+              locally. If the key is missing the build fails on purpose, so a broken OTA is never
+              published.</p>
+
+              <h3>Re-signing already published OTAs</h3>
+              <p>OTAs published before the incremental signing step existed lack the footer and must be
+              re-signed and re-uploaded:</p>
+              <div class="terminal-block">
+                <div class="terminal-header">
+                  <span class="term-dot dot-red"></span>
+                  <span class="term-dot dot-yellow"></span>
+                  <span class="term-dot dot-green"></span>
+                  <span class="terminal-title">bash</span>
+                  <button class="copy-term-btn">Copy</button>
+                </div>
+                <div class="terminal-body"><span class="terminal-output">HF_USER=&lt;hf-user&gt; HF_TOKEN=&lt;token&gt; \
+  scripts/package/resign_published_ota.sh [--dry-run] [device ...]</span></div>
+              </div>
+              <p>By default it processes <code>a32 a22 m32 f22</code>. For each device it downloads the
+              incremental from its OTA manifest, re-signs it, regenerates the manifest under
+              <code>OTA_MANIFESTS/{device}_ota.json</code>, and re-uploads it to the
+              <code>&lt;HF_USER&gt;/OTAs</code> bucket. Add <code>--dry-run</code> to only sign locally.
+              Remember to commit the regenerated manifests to the
+              <a href="https://github.com/Luminous418/cloudy" class="reference external">cloudy</a>
+              repository (<code>updater/ota/{device}.json</code>).</p>
+            </section>
 
           </section>
 
