@@ -4,7 +4,7 @@ const SEARCH_INDEX = [
     {
         title: "Introduction",
         url: "../",
-        content: "Welcome to the documentation for LumiROM - a custom ROM designed to bring One UI and Galaxy AI to low-end Samsung MediaTek devices. What does LumiROM do? How it works Firmware Download OTA Merging & Extraction Optimizations & Tweaks EROFS Packaging Universal compilation Community."
+        content: "Welcome to the documentation for LumiROM - a custom ROM designed to bring One UI to low-end Samsung MediaTek devices with a performance-first, AI-free profile. What does LumiROM do? How it works Firmware Download OTA Merging & Extraction Optimizations & Tweaks EROFS Packaging Universal compilation Community."
     },
     {
         title: "Supported Devices",
@@ -14,7 +14,7 @@ const SEARCH_INDEX = [
     {
         title: "Features",
         url: "../features/",
-        content: "A complete suite of system optimizations, advanced security modifications, and Galaxy AI magic. Heavy Debloat Deodexed ROM EROFS Filesystem Battery & CPU Tweaks High-End Animations VoLTE Fix Call Assist Writing Assist Note Assist Transcript Assist Browsing Assist Photo Assist Knox Patches Secure Folder Samsung Health SmartThings Knox Guard Disabled Bypass Flag Secure Signature Verification Screenshot Anywhere Native Screen Recorder Bluetooth Recording."
+        content: "A complete suite of system optimizations, advanced security modifications, and a performance-first profile. Heavy Debloat Deodexed ROM EROFS Filesystem Battery & CPU Tweaks High-End Animations VoLTE Fix AI-free by default Knox Patches Secure Folder Samsung Health SmartThings Knox Guard Disabled Bypass Flag Secure Signature Verification Screenshot Anywhere Native Screen Recorder Bluetooth Recording."
     },
     {
         title: "Build Methods",

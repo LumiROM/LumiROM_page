@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
   <title>Features - LumiROM documentation</title>
-  <meta name="description" content="Explore all LumiROM features: system optimizations, Galaxy AI, Knox patches and more." />
-  <meta name="keywords" content="LumiROM, features, galaxy ai, knox, debloat, erofs, deodex, volte" />
+  <meta name="description" content="Explore all LumiROM features: system optimizations, Knox patches, AI-free profile and more." />
+  <meta name="keywords" content="LumiROM, features, ai-free, knox, debloat, erofs, deodex, volte" />
   <meta name="author" content="Luminous418" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LumiROM - Features" />
-  <meta property="og:description" content="Explore all LumiROM features: system optimizations, Galaxy AI, Knox patches and more." />
+  <meta property="og:description" content="Explore all LumiROM features: system optimizations, Knox patches, AI-free profile and more." />
   <meta property="og:image" content="../_static/logo.png" />
   <link rel="stylesheet" href="../_static/lumirom.css" />
   <link rel="shortcut icon" href="../_static/logo.png" />
@@ -61,7 +61,7 @@
             <li><a class="reference internal" href="#features">Features</a>
               <ul>
                 <li><a class="reference internal" href="#system">System Optimization</a></li>
-                <li><a class="reference internal" href="#galaxy-ai">Galaxy AI</a></li>
+                <li><a class="reference internal" href="#ai-free">AI-free by default</a></li>
                 <li><a class="reference internal" href="#knox">Knox Patches</a></li>
                 <li><a class="reference internal" href="#extra">More Features</a></li>
               </ul>
@@ -78,13 +78,13 @@
 
           <section id="features">
             <h1>Features<a class="headerlink" href="#features" title="Link to this heading">¶</a></h1>
-            <p>A complete suite of system optimizations, advanced security modifications, and Galaxy AI magic.
-            Use the tabs below to explore each category.</p>
+            <p>A complete suite of system optimizations, advanced security modifications, and a
+            performance-first profile. Use the tabs below to explore each category.</p>
 
             <!-- Tab bar -->
             <div class="tab-bar">
               <button class="tab-btn active" data-tab="system">⚡ System Optimization</button>
-              <button class="tab-btn" data-tab="ai">✨ Galaxy AI</button>
+              <button class="tab-btn" data-tab="ai">🚫 AI-free</button>
               <button class="tab-btn" data-tab="knox">🛡️ Knox Patches</button>
               <button class="tab-btn" data-tab="extra">🛠️ More Features</button>
             </div>
@@ -141,53 +141,33 @@
               </section>
             </div>
 
-            <!-- ── Tab: Galaxy AI ───────────────────────────────────── -->
+            <!-- ── Tab: AI-free ─────────────────────────────────────── -->
             <div class="tab-content" id="tab-ai">
-              <section id="galaxy-ai">
-                <h2>Galaxy AI<a class="headerlink" href="#galaxy-ai" title="Link to this heading">¶</a></h2>
-                <p>LumiROM brings Samsung's flagship Galaxy AI features to devices that were never officially
-                supported. All features are integrated directly at system level - no root required.</p>
+              <section id="ai-free">
+                <h2>AI-free by default<a class="headerlink" href="#ai-free" title="Link to this heading">¶</a></h2>
+                <p>Official LumiROM builds do not include Galaxy AI. These phones (4-6 GB RAM, no NPU)
+                cannot run the full AI stack without lag, memory pressure and battery drain, so the ROM
+                prioritizes stability and smoothness instead.</p>
                 <div class="features-grid">
                   <div class="feature-card">
-                    <span class="feature-icon">📞</span>
+                    <span class="feature-icon">⚡</span>
                     <div>
-                      <p class="feature-title">Call Assist</p>
-                      <p class="feature-desc">Modify your voice and make real-time translated calls using built-in AI models.</p>
+                      <p class="feature-title">Smoother UI</p>
+                      <p class="feature-desc">No AI background services competing for RAM and CPU, so the system stays responsive.</p>
                     </div>
                   </div>
                   <div class="feature-card">
-                    <span class="feature-icon">✍️</span>
+                    <span class="feature-icon">🔋</span>
                     <div>
-                      <p class="feature-title">Writing Assist</p>
-                      <p class="feature-desc">Writing tools in the Samsung Keyboard to translate, compose, and change the tone of your text.</p>
+                      <p class="feature-title">Better battery</p>
+                      <p class="feature-desc">No AI models or background inference running on hardware that was not designed for them.</p>
                     </div>
                   </div>
                   <div class="feature-card">
-                    <span class="feature-icon">📝</span>
+                    <span class="feature-icon">🛠️</span>
                     <div>
-                      <p class="feature-title">Note Assist</p>
-                      <p class="feature-desc">Automatic note organization, formatting, spelling corrections, and quick text summarization.</p>
-                    </div>
-                  </div>
-                  <div class="feature-card">
-                    <span class="feature-icon">🎙️</span>
-                    <div>
-                      <p class="feature-title">Transcript Assist</p>
-                      <p class="feature-desc">Voice recording transcripts, translations, and summaries with intelligent speaker identification.</p>
-                    </div>
-                  </div>
-                  <div class="feature-card">
-                    <span class="feature-icon">🌐</span>
-                    <div>
-                      <p class="feature-title">Browsing Assist</p>
-                      <p class="feature-desc">Summarize and translate entire articles inside the official Samsung Internet browser.</p>
-                    </div>
-                  </div>
-                  <div class="feature-card">
-                    <span class="feature-icon">🖼️</span>
-                    <div>
-                      <p class="feature-title">Photo Assist</p>
-                      <p class="feature-desc">Generative photo editor: erase unwanted objects, move subjects, and fill in cropped margins.</p>
+                      <p class="feature-title">Still your choice</p>
+                      <p class="feature-desc">Galaxy AI is available in the build script if you want to compile it yourself (disabled by default; use <code>--ai</code> to enable it).</p>
                     </div>
                   </div>
                 </div>

@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <script>document.documentElement.classList.add('js');</script>
   <title>Introduction - LumiROM documentation</title>
-  <meta name="description" content="LumiROM is a custom ROM that brings One UI and Galaxy AI to low-end Samsung MediaTek devices." />
-  <meta name="keywords" content="LumiROM, custom rom, one ui, galaxy ai, mediatek, samsung, SM-A325F, SM-A225F" />
+  <meta name="description" content="LumiROM is a custom ROM that brings One UI to low-end Samsung MediaTek devices with a performance-first, AI-free profile." />
+  <meta name="keywords" content="LumiROM, custom rom, one ui, mediatek, samsung, SM-A325F, SM-A225F" />
   <meta name="author" content="Luminous418" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="LumiROM - Introduction" />
-  <meta property="og:description" content="LumiROM is a custom ROM that brings One UI and Galaxy AI to low-end Samsung MediaTek devices." />
+  <meta property="og:description" content="LumiROM is a custom ROM that brings One UI to low-end Samsung MediaTek devices with a performance-first, AI-free profile." />
   <meta property="og:image" content="_static/logo.png" />
   <link rel="stylesheet" href="_static/lumirom.css" />
   <link rel="shortcut icon" href="_static/logo.png" />
@@ -82,16 +82,20 @@
           <section id="introduction">
             <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">¶</a></h1>
             <p>Welcome to the documentation for <strong>LumiROM</strong> - a custom ROM designed to bring
-            <strong>One UI</strong> and <strong>Galaxy AI</strong> to low-end Samsung MediaTek devices.</p>
+            <strong>One UI</strong> to low-end Samsung MediaTek devices.</p>
 
             <p>LumiROM takes official Samsung firmware and reconstructs it from scratch, applying
-            heavy optimizations, Galaxy AI features, Knox patches and EROFS filesystem compression
-            to give your device a completely new, smooth experience.</p>
+            heavy optimizations, Knox patches and EROFS filesystem compression to give your device
+            a completely new, smooth experience.</p>
+
+            <p><strong>Why no Galaxy AI?</strong> These phones (4-6 GB RAM, no NPU) cannot run the full
+            AI stack without lag, memory pressure and battery drain, so official LumiROM builds are
+            AI-free. AI is disabled by default; add <code>--ai</code> if you want to compile it in.</p>
 
             <p>Some of the special features of LumiROM are:</p>
             <ul>
-              <li><p><strong>Galaxy AI</strong>: Call Assist, Writing Assist, Note Assist, Photo Assist,
-              Transcript Assist and Browsing Assist - on devices that were never meant to have them.</p></li>
+              <li><p><strong>No Galaxy AI</strong>: official builds are AI-free for performance and
+              stability. The AI stack is still available in the build script if you want it.</p></li>
               <li><p><strong>Knox patches</strong>: Secure Folder, Samsung Health, Samsung Flow and more -
               working without root or extra modules.</p></li>
               <li><p><strong>Heavy optimization</strong>: 150+ bloatware apps removed, EROFS filesystem,
@@ -134,8 +138,8 @@
                   <div class="flow-step-num">3</div>
                   <div>
                     <p class="flow-step-title">Optimizations &amp; Tweaks</p>
-                    <p class="flow-step-desc">Applies heavy debloating (150+ apps), integrates Galaxy AI,
-                    patches Knox via Smali modifications, and tunes CPU/GPU via kernel.</p>
+                    <p class="flow-step-desc">Applies heavy debloating (150+ apps), patches Knox via
+                    Smali modifications, and tunes CPU/GPU via kernel.</p>
                   </div>
                 </div>
                 <div class="flow-step">
