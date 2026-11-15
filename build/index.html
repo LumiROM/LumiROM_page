@@ -223,7 +223,7 @@ cd LumiROM</span></div>
 -i,  --imei &lt;15 digits>       Valid IMEI of the base device
 -t,  --target &lt;SM-XXXXX>      Base device (auto-derived from stock if omitted)
 -m,  --maintainer &lt;name>      Maintainer name (default: git username)
-     --no-mods                Exclude mods (Cloudy app, Vulkan fix, VoLTE fix...)
+     --no-mods                Exclude mods (LumiFota app, Vulkan fix, VoLTE fix...)
      --ai                     Enable Galaxy AI (disabled by default)
      --no-ai                  Explicitly disable Galaxy AI (default)
      --bpf-legacy             Enable if kernel BPF &lt; 5.10
@@ -410,7 +410,7 @@ cd LumiROM</span></div>
               <h2>OTA Signing<a class="headerlink" href="#ota-signing" title="Link to this heading">¶</a></h2>
               <p>Every flashable package - both the full ROM and the incremental OTA - is signed with
               <code>signapk -w</code>. The signature is stored as a ZIP comment (the <em>footer</em>) that
-              Cloudy and Android's <code>RecoverySystem</code> read before installing. Without it the device
+              LumiFota and Android's <code>RecoverySystem</code> read before installing. Without it the device
               rejects the package with:</p>
               <div class="alert-box alert-warning">
                 <strong>⚠️ Package verification failed:</strong><br />
@@ -443,8 +443,8 @@ cd LumiROM</span></div>
               <code>OTA_MANIFESTS/{device}_ota.json</code>, and re-uploads it to the
               <code>&lt;HF_USER&gt;/OTAs</code> bucket. Add <code>--dry-run</code> to only sign locally.
               Remember to commit the regenerated manifests to the
-              <a href="https://github.com/Luminous418/cloudy" class="reference external">cloudy</a>
-              repository (<code>updater/ota/{device}.json</code>).</p>
+              <a href="https://github.com/LumiROM/updater" class="reference external">updater</a>
+              repository (<code>{device}.json</code> at the root, e.g. <code>a32.json</code>).</p>
             </section>
 
           </section>
