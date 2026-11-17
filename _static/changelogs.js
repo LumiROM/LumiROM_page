@@ -2,7 +2,86 @@
 
 const CHANGELOGS = [
     {
-        version: '8.7.0', series: '8.7.x', tag: 'latest', date: '2026-10',
+        version: '9.0.2', series: '9.0.x', tag: 'latest', date: '2026-11',
+        sections: {
+            features: [
+                "<strong>AI-free by default.</strong> Official builds no longer include Galaxy AI. It is opt-in: use <code>--ai</code> (or set <code>USE_GALAXY_AI=true</code> in the workflow) if you want it. The stock A34 AI apps (Smart Suggestions, Photo Remaster, Call Assistant, Bixby Vision, Video Editor Lite) and their AI feature flags are removed; the Document Scanner is kept.",
+                "<strong>LumiFota replaces Cloudy.</strong> Cloudy is discontinued. The new OTA client is built from scratch with the One UI 9 Software Update look and reads its manifests from <code>LumiROM/updater</code>."
+            ],
+            fixes: [
+                "Fixed VPN and connection issues (second time the charm).",
+                "Fixed the JPG issue being white or not loading at all.",
+                "Fixed the hotspot turning-off bug: the SoftAp teardown no longer blocks, and the fix is baked into the Wi-Fi APEX without modules or root.",
+                "Fixed the Wi-Fi APEX patch that could truncate <code>service-wifi.jar</code> and bootloop. The ext4 payload is now grown before writing the patched jar and the jar is verified after insertion.",
+                "Fixed the brightness collapsing at maximum brightness. The ported kernel has no HBM support for the A32 panel, so when One UI switched to high-brightness mode the panel was given a ~26/255 brightness index and dropped to about 5% instead of getting brighter. HBM is now disabled, so the panel stays at its real maximum (255/255) and the auto-brightness curve behaves like stock.",
+                "Fixed the GPU staying at 299 MHz on the A34→A32 port: the GED fallback DVFS now samples correctly and keeps a 663 MHz floor, dropping the GPU frame time from ~13-14 ms to ~5 ms and making 90 Hz animations much smoother.",
+                "Fixed the log spam on every launch. Apps ask for a 0 Hz frame rate to mean \"no preference\" and the display director logged that as a failed mode lookup (559 lines in four minutes); those requests are now ignored.",
+                "Fixed the battery log spam: the fuel gauge was looked up as <code>sec-fuelgauge</code> instead of <code>sm5714-fuelgauge</code>, so ASOC read -1 and <code>Fail to get psy ((null))</code> printed every ten seconds. The name is fixed, ASOC reads real values and nodes for absent hardware (wireless charging on the A32) no longer report an error.",
+                "Fixed the software update install on systems without root. <code>uncrypt</code> could not resolve the userdata block device (SELinux) so the framework aborted the update and LumiFota fell back to asking for root. The policy now allows it: the system shows its \"Android system update / Preparing to update\" progress, reboots by itself and TWRP installs the staged package through <code>openrecoveryscript</code>.",
+                "Fixed the LumiFota OTA app and the FluidMotion settings app not installing. One UI only registers system packages that are declared in <code>allowed-system-preload</code>, so both were dropped during the boot scan without any error. They are now declared, so LumiFota is installed as the privileged updater and Settings → LumiROM → UI → Fluid Motion opens its screen again."
+            ],
+            more: [
+                "[Repo] Kernel rebuilt for the A325F/A325M with the GED DVFS fallback fixes and the 663 MHz GPU floor.",
+                "[Repo] <code>services.jar</code> patch that forces <code>HighBrightnessModeController.isHbmCurrentlyAllowed()</code> to <code>false</code>. The previous HBM timing, hysteresis and darkening-hold patches were dropped: <code>timeMaxMillis</code> capped HBM at five minutes and the A32 panel driver cannot do HBM at all.",
+                "[Repo] <code>services.jar</code> patch that drops refresh-rate requests of 0 Hz before the mode lookup (<code>AppRequestObserver.findModeLocked</code>).",
+                "[Repo] Kernel: <code>fuelgauge_name</code> falls back to <code>sm5714-fuelgauge</code> and <code>psy_do_property()</code> skips the error when the power supply name is NULL, i.e. when the hardware is not present.",
+                "[Repo] LumiFota: SELinux now allows <code>read</code>/<code>map</code> of the staged package in <code>/data/ota_package</code> and the app ships with the rootless install path (BCB + <code>openrecoveryscript</code> + <code>PowerManager.reboot(\"recovery\")</code>).",
+                "[Repo] Hotspot APEX patch: strip the AVB footer, grow the ext4 payload with <code>resize2fs</code>, write and verify the patched <code>service-wifi.jar</code>, then re-sign the payload and repack the APEX.",
+                "[Repo] AI-free default and <code>--ai</code> opt-in in <code>build_local.sh</code>, the TUI and both GitHub workflows. The AI cleanup removes the stock AI apps and their orphan permission/sysconfig XMLs while keeping the Vex framework and Document Scanner.",
+                "[Repo] LumiFota/updater integration. Cloudy is discontinued.",
+                "[Repo] <code>allowed-system-preload</code> entries for <code>de.lumi.fota</code> and <code>dev.flexy.fluidmotion</code>. Without them One UI's PackageManager skips those system packages silently: no scan error is logged on user builds, and <code>pm</code> never sees the app at all."
+            ],
+            notes: [
+                "LumiROM 9.0.2 Ultimate Update is a maintenance update over 9.0.1."
+            ]
+        }
+    },
+    {
+        version: '9.0.1', series: '9.0.x', tag: 'stable', date: '2026-11',
+        sections: {
+            fixes: [
+                "Fixed Chrome tabs staying on the loading screen or dying on Android 17: <code>zygote_next</code> asked the kernel for capabilities 38 to 40, which do not exist on the 4.14 kernel. The capability scan now stops at 37 in <code>libzygote.dylib.so</code>.",
+                "Fixed blank JPEG photos caused by the vendor's <code>jpeg_decode_sw_opt</code> path trying to use a dma-buf heap that does not exist on the 4.14 kernel.",
+                "Restored <strong>BBR</strong> TCP congestion control on the A32 kernel; the ODM init rules select it at boot."
+            ],
+            more: [
+                "[Repo] New <code>ChromeFix</code> mod with the patched <code>libzygote.dylib.so</code> for the 4.14 kernel capability scan.",
+                "[Repo] New <code>ODMFix</code> mod with <code>local_a32.rc</code> and <code>local_a22.rc</code> for the JPEG and BBR fixes.",
+                "[Repo] Mods are auto-discovered from <code>LumiROM/Mods</code> via <code>module.prop</code>; manual paths were removed from <code>Mods.sh</code>.",
+                "[Repo] A32 kernel rebuilt with <code>CONFIG_TCP_CONG_BBR</code> for the A325F/A325M boot images."
+            ],
+            notes: [
+                "LumiROM 9.0.1 is a maintenance update over 9.0.0."
+            ]
+        }
+    },
+    {
+        version: '9.0.0', series: '9.0.x', tag: 'stable', date: '2026-11',
+        deviceNote: 'LumiROM 9.0.0 is based on a new Android/One UI release. A clean flash is recommended when coming from One UI 8.5; back up your data first.',
+        sections: {
+            features: [
+                "Upgraded the base to <strong>One UI 9 / Android 17</strong> (<code>A346BXXUHGZJ8</code>).",
+                "Added <strong>FluidMotion</strong> animations as static ports, with no root or LSPosed required:<ul style=\"margin:6px 0 0 18px;\"><li><strong>UnlockFlyIn</strong>: home-screen unlock fly-in animation.</li><li><strong>AppUnlock</strong>: app unlock animation in SystemUI.</li><li><strong>ShadeFlyIn</strong>: notification fly-in animation.</li></ul>",
+                "Added the <strong>FluidMotion settings app</strong> to LumiROM Settings > UI Settings, where the unlock, app and shade animations can be adjusted.",
+                "Added <strong>Samsung debloat</strong> for ShareLive, Rubin, SCPM and IP Service to reduce background RAM and CPU usage."
+            ],
+            fixes: [
+                "Fixed video playback crashes in YouTube and local players caused by the One UI 9 <code>libion.so</code> stub (Codec2/ION). The same backport restores MediaCodec video playback in Chrome.",
+                "Reduced Quick Settings split-panel jank by removing per-frame logging from the slide transition; QS rendering stays native.",
+                "Fixed the SDHMS SIOP warning on One UI 9.",
+                "Re-applied the Samsung Camera patch and the existing ROM fixes on the new base."
+            ],
+            more: [
+                "[Repo] New <code>CodecFix</code> mod with the One UI 8.5 <code>libion.so</code> backport so codecs doesn't die.",
+                "[Repo] FluidMotion static ports integrated into <code>Mods/FluidMotion</code> (SystemUI and Launcher).",
+                "[Repo] Added the new debloat entries to <code>DEBLOAT_APPS</code>.",
+                "[Repo] FluidMotion preference controller key handling fix in the LumiSettings SecSettings overlay.",
+                "Thanks to ProjectCipher for the apks."
+            ],
+        }
+    },
+    {
+        version: '8.7.0', series: '8.7.x', tag: 'stable', date: '2026-10',
         deviceNote: 'On the first boot after updating to 8.7.0, the device will show an "Optimizing apps" screen and then reboot on its own. This reboot is intentional - once it finishes rebooting, everything works normally, no action is needed on your side.',
         sections: {
             features: [
