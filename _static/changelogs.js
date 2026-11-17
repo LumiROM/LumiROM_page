@@ -3,6 +3,16 @@
 const CHANGELOGS = [
     {
         version: '9.0.2', series: '9.0.x', tag: 'latest', date: '2026-11',
+        screenshots: [
+            { src: '../_static/changelog-shots/9.0.2/01-splash.jpg', thumb: '../_static/changelog-shots/9.0.2/01-splash-thumb.jpg', caption: 'LumiFota splash' },
+            { src: '../_static/changelog-shots/9.0.2/02-available.jpg', thumb: '../_static/changelog-shots/9.0.2/02-available-thumb.jpg', caption: 'Update available' },
+            { src: '../_static/changelog-shots/9.0.2/03-downloading.jpg', thumb: '../_static/changelog-shots/9.0.2/03-downloading-thumb.jpg', caption: 'Downloading the update' },
+            { src: '../_static/changelog-shots/9.0.2/04-ready.jpg', thumb: '../_static/changelog-shots/9.0.2/04-ready-thumb.jpg', caption: 'Ready to install' },
+            { src: '../_static/changelog-shots/9.0.2/05-auto-download.jpg', thumb: '../_static/changelog-shots/9.0.2/05-auto-download-thumb.jpg', caption: 'Auto-download setting' },
+            { src: '../_static/changelog-shots/9.0.2/06-last-update.jpg', thumb: '../_static/changelog-shots/9.0.2/06-last-update-thumb.jpg', caption: 'Last update details' },
+            { src: '../_static/changelog-shots/9.0.2/07-overflow.jpg', thumb: '../_static/changelog-shots/9.0.2/07-overflow-thumb.jpg', caption: 'Overflow menu' },
+            { src: '../_static/changelog-shots/9.0.2/08-software-info.jpg', thumb: '../_static/changelog-shots/9.0.2/08-software-info-thumb.jpg', caption: 'Software information' }
+        ],
         sections: {
             features: [
                 "<strong>AI-free by default.</strong> Official builds no longer include Galaxy AI. It is opt-in: use <code>--ai</code> (or set <code>USE_GALAXY_AI=true</code> in the workflow) if you want it. The stock A34 AI apps (Smart Suggestions, Photo Remaster, Call Assistant, Bixby Vision, Video Editor Lite) and their AI feature flags are removed; the Document Scanner is kept.",
@@ -57,6 +67,11 @@ const CHANGELOGS = [
     },
     {
         version: '9.0.0', series: '9.0.x', tag: 'stable', date: '2026-11',
+        screenshots: [
+            { src: '../_static/changelog-shots/9.0.0/software-info.jpg', thumb: '../_static/changelog-shots/9.0.0/software-info-thumb.jpg', caption: 'Software information (One UI 9)' },
+            { src: '../_static/changelog-shots/9.0.0/ui-settings.jpg', thumb: '../_static/changelog-shots/9.0.0/ui-settings-thumb.jpg', caption: 'LumiROM UI settings' },
+            { src: '../_static/changelog-shots/9.0.0/fluidmotion-settings.jpg', thumb: '../_static/changelog-shots/9.0.0/fluidmotion-settings-thumb.jpg', caption: 'FluidMotion settings' }
+        ],
         deviceNote: 'LumiROM 9.0.0 is based on a new Android/One UI release. A clean flash is recommended when coming from One UI 8.5; back up your data first.',
         sections: {
             features: [
@@ -82,6 +97,11 @@ const CHANGELOGS = [
     },
     {
         version: '8.7.0', series: '8.7.x', tag: 'stable', date: '2026-10',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.7.0/settings-1.jpg', thumb: '../_static/changelog-shots/8.7.0/settings-1-thumb.jpg', caption: 'LumiROM Settings' },
+            { src: '../_static/changelog-shots/8.7.0/settings-2.jpg', thumb: '../_static/changelog-shots/8.7.0/settings-2-thumb.jpg', caption: 'UI settings · launcher animation' },
+            { src: '../_static/changelog-shots/8.7.0/settings-3.jpg', thumb: '../_static/changelog-shots/8.7.0/settings-3-thumb.jpg', caption: 'Extra settings · ASKS and developer status' }
+        ],
         deviceNote: 'On the first boot after updating to 8.7.0, the device will show an "Optimizing apps" screen and then reboot on its own. This reboot is intentional - once it finishes rebooting, everything works normally, no action is needed on your side.',
         sections: {
             features: [
@@ -107,6 +127,11 @@ const CHANGELOGS = [
     },
     {
         version: '8.6.5', series: '8.6.x', tag: 'stable', date: '2026-09',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.6.5/new-info.jpg', thumb: '../_static/changelog-shots/8.6.5/new-info-thumb.jpg', caption: 'Software information · One UI 8.5' },
+            { src: '../_static/changelog-shots/8.6.5/disclaimer.jpg', thumb: '../_static/changelog-shots/8.6.5/disclaimer-thumb.jpg', caption: 'LumiROM disclaimer' },
+            { src: '../_static/changelog-shots/8.6.5/cloudy-ota.jpg', thumb: '../_static/changelog-shots/8.6.5/cloudy-ota-thumb.jpg', caption: 'Cloudy OTA · installed version' }
+        ],
         sections: {
             fixes: [
                 'Fixed black recents preview by switching to the OpenGL renderer.',
@@ -133,6 +158,10 @@ const CHANGELOGS = [
     },
     {
         version: '8.6.4', series: '8.6.x', tag: 'stable', date: '2026-08',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.6.4/updater-3.jpg', thumb: '../_static/changelog-shots/8.6.4/updater-3-thumb.jpg', caption: 'Cloudy update · available build' },
+            { src: '../_static/changelog-shots/8.6.4/updater-4.jpg', thumb: '../_static/changelog-shots/8.6.4/updater-4-thumb.jpg', caption: 'Cloudy maintainer tab' }
+        ],
         sections: {
             fixes: ['Now OTA app appears on homescreen.'],
             features: [
@@ -143,6 +172,10 @@ const CHANGELOGS = [
     },
     {
         version: '8.6.3', series: '8.6.x', tag: 'stable', date: '2026-08',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.6.3/updater-1.jpg', thumb: '../_static/changelog-shots/8.6.3/updater-1-thumb.jpg', caption: 'Cloudy · up to date' },
+            { src: '../_static/changelog-shots/8.6.3/updater-2.jpg', thumb: '../_static/changelog-shots/8.6.3/updater-2-thumb.jpg', caption: 'Cloudy maintainer tab' }
+        ],
         sections: {
             fixes: ['Attempt to fix hotspot.'],
             features: [
@@ -156,6 +189,12 @@ const CHANGELOGS = [
     },
     {
         version: '8.6.2', series: '8.6.x', tag: 'stable', date: '2026-05',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.6.2/homescreen.jpg', thumb: '../_static/changelog-shots/8.6.2/homescreen-thumb.jpg', caption: 'Home screen' },
+            { src: '../_static/changelog-shots/8.6.2/lockscreen.jpg', thumb: '../_static/changelog-shots/8.6.2/lockscreen-thumb.jpg', caption: 'Lock screen' },
+            { src: '../_static/changelog-shots/8.6.2/galaxy-ai-1.jpg', thumb: '../_static/changelog-shots/8.6.2/galaxy-ai-1-thumb.jpg', caption: 'Galaxy AI' },
+            { src: '../_static/changelog-shots/8.6.2/galaxy-ai-2.jpg', thumb: '../_static/changelog-shots/8.6.2/galaxy-ai-2-thumb.jpg', caption: 'Galaxy AI' }
+        ],
         sections: {
             fixes: ['No fixes in this release.'],
             features: [
@@ -175,6 +214,11 @@ const CHANGELOGS = [
     },
     {
         version: '8.6.1', series: '8.6.x', tag: 'stable', date: '2026-04',
+        screenshots: [
+            { src: '../_static/changelog-shots/8.6.1/homescreen.jpg', thumb: '../_static/changelog-shots/8.6.1/homescreen-thumb.jpg', caption: 'Home screen' },
+            { src: '../_static/changelog-shots/8.6.1/software-info.jpg', thumb: '../_static/changelog-shots/8.6.1/software-info-thumb.jpg', caption: 'Software information' },
+            { src: '../_static/changelog-shots/8.6.1/wallpapers.jpg', thumb: '../_static/changelog-shots/8.6.1/wallpapers-thumb.jpg', caption: 'Wallpapers' }
+        ],
         sections: {
             fixes: [
                 'Fixed apps crashing like X, Snapchat; others that were significantly laggy like Telegram.',
@@ -327,6 +371,31 @@ const TAG_META = {
 };
 
 // ─── Renderer ─────────────────────────────────────────────────────────────────
+function renderGallery(shots) {
+    if (!shots || !shots.length) return '';
+    const thumbs = shots.map((s, i) => `
+                <button type="button" class="cl-shot" data-src="${s.src}" data-caption="${s.caption}"
+                        aria-label="Enlarge screenshot ${i + 1} of ${shots.length}: ${s.caption}">
+                    <span class="cl-shot-frame"><img src="${s.thumb}" alt="${s.caption}" loading="lazy" decoding="async"></span>
+                    <span class="cl-shot-caption">${s.caption}</span>
+                </button>`).join('');
+
+    return `
+    <details class="cl-gallery">
+        <summary class="cl-gallery-summary">
+            <span class="cl-gallery-icon">🖼️</span>
+            <span class="cl-gallery-heading">Screenshots</span>
+            <span class="cl-gallery-count">${shots.length}</span>
+            <svg class="cl-gallery-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+            </svg>
+        </summary>
+        <div class="cl-gallery-grid">${thumbs}
+        </div>
+    </details>`;
+}
+
 function renderChangelog(cl) {
     const tagHtml = cl.tag
         ? `<span class="cl-tag" style="background:${TAG_META[cl.tag].color}22;color:${TAG_META[cl.tag].color};border-color:${TAG_META[cl.tag].color}44;">${TAG_META[cl.tag].label}</span>`
@@ -336,7 +405,10 @@ function renderChangelog(cl) {
         ? `<div class="cl-device-note">⚠️ ${cl.deviceNote}</div>`
         : '';
 
-    const sectionsHtml = Object.entries(cl.sections).map(([key, items]) => {
+    // Notes always come first, whatever the order in the data object.
+    const sectionKeys = ['notes', ...Object.keys(cl.sections).filter(key => key !== 'notes')];
+    const sectionsHtml = sectionKeys.filter(key => (cl.sections[key] || []).length).map(key => {
+        const items = cl.sections[key];
         const meta = SECTION_META[key] || { label: key, icon: '•', color: '#94a3b8' };
         const itemsHtml = items.map(item => `<li>${item}</li>`).join('');
         return `
@@ -369,7 +441,98 @@ function renderChangelog(cl) {
         </div>
         ${deviceNoteHtml}
     </div>
-    <div class="cl-sections">${sectionsHtml}</div>`;
+    <div class="cl-sections">${sectionsHtml}</div>
+    ${renderGallery(cl.screenshots)}`;
+}
+
+// ─── Lightbox ─────────────────────────────────────────────────────────────────
+function initLightbox(panel) {
+    const box = document.createElement('div');
+    box.className = 'cl-lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Screenshot viewer');
+    box.innerHTML = `
+        <button type="button" class="cl-lightbox-close" aria-label="Close">✕</button>
+        <button type="button" class="cl-lightbox-nav cl-lightbox-prev" aria-label="Previous screenshot">‹</button>
+        <figure class="cl-lightbox-figure">
+            <img alt="">
+            <figcaption></figcaption>
+        </figure>
+        <button type="button" class="cl-lightbox-nav cl-lightbox-next" aria-label="Next screenshot">›</button>`;
+    document.body.appendChild(box);
+
+    const img     = box.querySelector('img');
+    const caption = box.querySelector('figcaption');
+    const prevBtn = box.querySelector('.cl-lightbox-prev');
+    const nextBtn = box.querySelector('.cl-lightbox-next');
+    const closeBtn = box.querySelector('.cl-lightbox-close');
+    let items = [];
+    let index = 0;
+    let opener = null;
+
+    function show(i) {
+        if (!items.length) return;
+        index = (i + items.length) % items.length;
+        img.src = items[index].src;
+        img.alt = items[index].caption;
+        caption.textContent = items[index].caption;
+        const multiple = items.length > 1;
+        prevBtn.hidden = !multiple;
+        nextBtn.hidden = !multiple;
+    }
+
+    function open(shot) {
+        const grid = shot.closest('.cl-gallery-grid');
+        if (!grid) return;
+        items = Array.from(grid.querySelectorAll('.cl-shot')).map(el => ({
+            src: el.dataset.src,
+            caption: el.dataset.caption
+        }));
+        opener = shot;
+        show(items.findIndex(it => it.src === shot.dataset.src));
+        box.classList.add('is-open');
+        document.body.classList.add('cl-lightbox-open');
+        closeBtn.focus();
+    }
+
+    function close() {
+        box.classList.remove('is-open');
+        document.body.classList.remove('cl-lightbox-open');
+        img.removeAttribute('src');
+        if (opener) {
+            opener.focus();
+            opener = null;
+        }
+    }
+
+    panel.addEventListener('click', event => {
+        const shot = event.target.closest('.cl-shot');
+        if (!shot) return;
+        event.preventDefault();
+        open(shot);
+    });
+
+    box.addEventListener('click', event => {
+        if (event.target === box || event.target.closest('.cl-lightbox-close')) {
+            close();
+        } else if (event.target.closest('.cl-lightbox-prev')) {
+            show(index - 1);
+        } else if (event.target.closest('.cl-lightbox-next')) {
+            show(index + 1);
+        }
+    });
+
+    document.addEventListener('keydown', event => {
+        if (!box.classList.contains('is-open')) return;
+        if (event.key === 'Escape') {
+            close();
+        } else if (event.key === 'ArrowLeft') {
+            show(index - 1);
+        } else if (event.key === 'ArrowRight') {
+            show(index + 1);
+        }
+    });
 }
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
@@ -420,4 +583,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render first entry
     panel.innerHTML = renderChangelog(CHANGELOGS[0]);
     panel.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+
+    initLightbox(panel);
 });

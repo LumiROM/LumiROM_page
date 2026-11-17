@@ -191,7 +191,7 @@ function buildTimeline() {
 
     const groups = [
         '.flow-step', '.device-card', '.feature-card', '.app-card', '.step-item',
-        '.cl-sidebar-item', '.cl-hero', '.cl-section', '.highlight-box',
+        '.cl-sidebar-item', '.cl-hero', '.cl-section', '.cl-gallery', '.highlight-box',
         '.admonition', '.note-box', '.alert-box'
     ];
     let at = 180;
