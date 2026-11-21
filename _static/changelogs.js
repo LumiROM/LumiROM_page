@@ -2,7 +2,35 @@
 
 const CHANGELOGS = [
     {
-        version: '9.0.2', series: '9.0.x', tag: 'latest', date: '2026-11',
+        version: '9.0.3', series: '9.0.x', tag: 'latest', date: '2026-11',
+        sections: {
+            notes: [
+                "LumiROM 9.0.3 is a maintenance update over 9.0.2."
+            ],
+            fixes: [
+                "Fixed apps that use <code>android:useAppZygote</code> (Chromium-based browsers and some banking apps) freezing the phone for about 30 seconds and soft-rebooting it. The AppZygote subspecies aborted because <code>reset_for_subspecies()</code> ran the file-descriptor audit after <code>register_new()</code> had skipped the descriptors that liblog reopened. The audit is skipped for the subspecies reset, while <code>register_new()</code> keeps its checks and the audit in <code>Server::new()</code> is untouched.",
+                "Fixed the FaceService crash loop. The AI cleanup removed the whole <code>/system/saiv</code> tree, but FaceService loads <code>/system/saiv/face/fr/MobileFace.{bin,param}</code> for face recognition and <code>/system/saiv/imageCropper/sce_detector_cnn.tflite</code> for the ICE detector. With those files missing the native interpreters were created as null and <code>FaceDetectionWorker</code> died with a SIGSEGV in <code>libtensorflowlite_c</code> or <code>libHpr_RecFace_dl</code>. The shared SAIV models are kept now; only the 96 MB <code>textrecognition</code> OCR set is removed.",
+                "Fixed the JPEG decode path at the kernel level. The A32 boot images now carry the DMA-BUF heaps backport and the MediaTek ION mm heap exported as <code>/dev/dma_heap/mtk_mm</code>, so <code>libhwui</code> and <code>libkumihodecoderservice</code> can allocate from it. The <code>debug.jpegfull.opt.switch=0</code> workaround is gone on the A32, so the vendor JPEG optimization is active again.",
+                "Fixed \"Hide developer status\" crashing with <code>NoSuchFieldError: mMainSwitch</code>. One UI 9 removed <code>SettingsActivity.mMainSwitch</code>; the fragment now inflates Samsung's app-picker switch header and adds it with <code>SeslAppPickerView.addHeader()</code>, like Samsung's own app-picker screens.",
+                "Fixed the reboot menu crashing with <code>AbstractMethodError</code>. <code>PopupMenu.OnMenuItemClickListener.onMenuItemClick()</code> was declared as <code>void</code> instead of returning <code>boolean</code>; Reboot, Reboot to Recovery and Reboot to Download work again.",
+                "Fixed the screen turning off while the boot keyguard is still being drawn. The keyguard window asks for a 5 s user-activity timeout during boot; if the keyguard takes longer, the display slept before it was interactive and the power button had to be pressed two or three times. That exact 5 s timeout is now 30 s; the normal 60 s timeout and the <code>-1</code> clear are unchanged.",
+                "Removed the \"User guide\" entry between Software update and About phone.",
+                "The installer now empties the leftover preload folders on <code>/prism</code> (<code>priv-app</code>, <code>app</code>, <code>preload/SER/hidden_app</code>, <code>sipdb/SwiftKey</code>) and their dalvik-cache entries. It keeps the folders themselves, skips anything that does not exist and works in both the full ROM and incremental OTAs."
+            ],
+            more: [
+                "[Repo] <code>ChromeFix</code> now ships the patched <code>libzygote.dylib.so</code>: <code>bl audit</code> at <code>0x27eb0</code> branches to the function's <code>Ok(())</code> path. The mod README documents the byte-level patch and both hashes.",
+                "[Repo] AI cleanup keeps the shared SAIV models and drops only <code>system/system/saiv/textrecognition</code>; the face and imageCropper models add about 9 MB to <code>system.img</code>.",
+                "[Repo] Kernel: DMA-BUF heaps framework backport plus the MTK ION mm heap (<code>CONFIG_DMABUF_HEAPS</code>, <code>CONFIG_DMABUF_HEAPS_MTK_MM</code>).",
+                "[Repo] A32 boot images rebuilt with that kernel; the ODM rules no longer set <code>debug.jpegfull.opt.switch=0</code> on the A32, while the M32 keeps the workaround in <code>local_m32.rc</code> until its boot image is rebuilt.",
+                "[Repo] Kernel: BPF <code>get_netns_cookie</code> is exposed to <code>sock_ops</code> programs as well, which One UI 9.5 needs during boot; the A32 boot images were rebuilt with it.",
+                "[Repo] <code>services.jar</code> patch that clamps the keyguard window's 5000 ms timeout to 30000 ms in <code>RootWindowContainer$MyHandler</code>.",
+                "[Repo] <code>SecSettings</code> patch that removes the <code>top_level_user_manual</code> preference.",
+                "[Repo] <code>updater-script</code> prism cleanup for the full ROM and incremental OTAs, including the matching <code>*prism*</code> dalvik-cache entries."
+            ]
+        }
+    },
+    {
+        version: '9.0.2', series: '9.0.x', tag: 'stable', date: '2026-11',
         screenshots: [
             { src: '../_static/changelog-shots/9.0.2/01-splash.jpg', thumb: '../_static/changelog-shots/9.0.2/01-splash-thumb.jpg', caption: 'LumiFota splash' },
             { src: '../_static/changelog-shots/9.0.2/02-available.jpg', thumb: '../_static/changelog-shots/9.0.2/02-available-thumb.jpg', caption: 'Update available' },
